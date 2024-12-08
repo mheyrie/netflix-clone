@@ -5,7 +5,7 @@ import express from 'express'; //Es Module
 
 const app = express();
 
-app.get("/api/v1/signout", (req, res)=>{
+app.get("/api/v1/signup", (req, res)=>{
     res.send('Signup route')
 })
 app.get("/api/v1/login", (req, res)=>{
