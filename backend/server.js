@@ -1,6 +1,8 @@
 import express from 'express'; //Es Module
 // const express = require('express') - common js
 
+import authRoutes from './routes/auth.route.js'
+
 
 
 const app = express();
