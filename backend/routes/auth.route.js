@@ -2,7 +2,7 @@ import express from 'express'
 
 const router =express.Router();
 
-router.get("/signup", (req, res)=>{
+router.get("/signup", async (req, res)=>{
     res.send('Signup route')
 })
 router.get("/login", (req, res)=>{
