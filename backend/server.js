@@ -5,13 +5,13 @@ import express from 'express'; //Es Module
 
 const app = express();
 
-app.get("/signout", (req, res)=>{
+app.get("/api/v1/signout", (req, res)=>{
     res.send('Signup route')
 })
-app.get("/login", (req, res)=>{
+app.get("/api/v1/login", (req, res)=>{
     res.send('Login route')
 })
-app.get("/logout", (req, res)=>{
+app.get("/api/v1/logout", (req, res)=>{
     res.send('Logout route')
 })
 
