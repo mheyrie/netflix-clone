@@ -5,8 +5,8 @@ import express from 'express'; //Es Module
 
 const app = express();
 
-app.get("/", (req, res)=>{
-    res.send('Server is ready 123')
+app.get("/signup", (req, res)=>{
+    res.send('Signup route')
 })
 
 app.listen(5000, ()=>{
