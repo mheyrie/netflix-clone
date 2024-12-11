@@ -14,6 +14,8 @@ export async function signup(req, res) {
     if (!emailRegex.test(email)) {
       return res.status(400).json({ success: false, message: "Invalid Email" });
     }
+
+    //check for password length and if email or username already exists usage👇
     if (password.length < 6) {
       return res.status(400).json({
         success: false,
@@ -34,6 +36,7 @@ export async function signup(req, res) {
     }
 
 
+const newUser
 
 
   } catch (error) {}
