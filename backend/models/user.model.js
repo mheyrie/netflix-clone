@@ -24,3 +24,6 @@ const userSchema = mongoose.Schema({
     default: [],
   }
 });
+
+
+const User = mongoose.model('User', userSchema)
