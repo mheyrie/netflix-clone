@@ -1,8 +1,8 @@
 export async function signup(req, res) {
 try{
-
+const {email, password, username} = req.body
 }catch(error){
-    
+
 }
 }
 
