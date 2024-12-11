@@ -19,4 +19,8 @@ const userSchema = mongoose.Schema({
     type: String,
     default: true,
   },
+  searchHistory: {
+    type: Array,
+    default: [],
+  }
 });
