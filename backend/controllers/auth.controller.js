@@ -1,3 +1,5 @@
+import { User } from "../models/user.model";
+
 export async function signup(req, res) {
   try {
     const { email, password, username } = req.body;
@@ -12,9 +14,18 @@ export async function signup(req, res) {
     if (!emailRegex.test(email)) {
       return res.status(400).json({ success: false, message: "Invalid Email" });
     }
-    if (password.length<6) {
-      return res.status(400).json({ success: false, message: "Password must be at least 6 characters" });
+    if (password.length < 6) {
+      return res.status(400).json({
+        success: false,
+        message: "Password must be at least 6 characters",
+      });
     }
+    const existingUSerByEmail = await User.findOne({ email: email });
+    if(existingUSerByEmail){
+
+    }
+
+    
   } catch (error) {}
 }
 
