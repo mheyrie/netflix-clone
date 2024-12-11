@@ -26,6 +26,16 @@ export async function signup(req, res) {
       .status(400)
       .json({ success: false, message: "Email Already exists" });;
     }
+    const existingUSerByUsername = await User.findOne({ username: username });
+    if (existingUSerByUsername) {
+      return res
+      .status(400)
+      .json({ success: false, message: "Username Already exists" });;
+    }
+
+
+
+
   } catch (error) {}
 }
 
