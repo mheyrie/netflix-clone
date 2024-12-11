@@ -21,11 +21,11 @@ export async function signup(req, res) {
       });
     }
     const existingUSerByEmail = await User.findOne({ email: email });
-    if(existingUSerByEmail){
-
+    if (existingUSerByEmail) {
+      return res
+      .status(400)
+      .json({ success: false, message: "Email Already exists" });;
     }
-
-    
   } catch (error) {}
 }
 
