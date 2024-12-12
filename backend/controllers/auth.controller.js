@@ -35,6 +35,8 @@ export async function signup(req, res) {
         .json({ success: false, message: "Username Already exists" });
     }
 
+    const PROFILE_PICS = ['/avatar1.png','/avatar2.png','/avatar3.png',]
+
     const newUser = new User({
       email,
       password,
