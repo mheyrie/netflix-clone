@@ -43,7 +43,7 @@ export async function signup(req, res) {
 
     const newUser = new User({
       email,
-      password,
+      password:hashedPassword,
       username,
       image,
     });
