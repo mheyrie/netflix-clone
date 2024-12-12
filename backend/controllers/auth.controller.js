@@ -46,6 +46,7 @@ export async function signup(req, res) {
     });
     await newUser.save();
   } catch (error) {
+    console.log('Error in signup controller', error.message)
     res.status(500).json({success:false, message:'Internal server error'})
   }
 }
