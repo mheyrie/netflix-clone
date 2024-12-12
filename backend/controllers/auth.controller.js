@@ -42,6 +42,7 @@ export async function signup(req, res) {
       email,
       password,
       username,
+      image
     });
   } catch (error) {}
 }
