@@ -67,7 +67,12 @@ export async function signup(req, res) {
 }
 
 export async function login(req, res) {
-  res.send("Login route");
+  try{
+const {email, password}= req.body;
+if(!email || !password)
+  }catch(error){
+
+  }
 }
 
 export async function logout(req, res) {
