@@ -76,8 +76,22 @@ export async function login(req, res) {
     }
     const user = await User.findOne({email:email})
     if(!user){
-      return res.status(404).json({success: false, message: "Invalid email or password"})
+      return res.status(404).json({success: false, message: "Invalid credentials"})
     }
+
+    const isPasswordCorrect = await bcryptjs.compare(password, user.password);
+    if(!isPasswordCorrect){
+      return res.status(400).json({success: false, message: "Invalid credentials"})
+    }
+    generateTokenAndSetCookie(user._id, res)
+    res.status(201).json({
+      success: true,
+      user: {
+        ...newUser._doc,
+        password: "",
+      },
+    });
+
   } catch (error) {}
 }
 
