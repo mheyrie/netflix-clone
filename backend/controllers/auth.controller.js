@@ -1,5 +1,6 @@
 import { User } from "../models/user.model.js";
 import bcryptjs from "bcryptjs";
+import { generateTokenAndSetCookie } from "../utils/generateToken.js";
 
 export async function signup(req, res) {
   try {
@@ -23,12 +24,14 @@ export async function signup(req, res) {
         message: "Password must be at least 6 characters",
       });
     }
+
     const existingUSerByEmail = await User.findOne({ email: email });
     if (existingUSerByEmail) {
       return res
         .status(400)
         .json({ success: false, message: "Email Already exists" });
     }
+
     const existingUSerByUsername = await User.findOne({ username: username });
     if (existingUSerByUsername) {
       return res
@@ -37,17 +40,19 @@ export async function signup(req, res) {
     }
 
     const salt = await bcryptjs.genSalt(10);
-    const hashedPassword = await bcryptjs.hash(password, salt)
+    const hashedPassword = await bcryptjs.hash(password, salt);
     const PROFILE_PICS = ["/avatar1.png", "/avatar2.png", "/avatar3.png"];
     const image = PROFILE_PICS[Math.floor(Math.random() * PROFILE_PICS.length)];
 
     const newUser = new User({
       email,
-      password:hashedPassword,
+      password: hashedPassword,
       username,
       image,
     });
     await newUser.save();
+    generateTokenAndSetCookie(newUser._id, res);
+
     res.status(201).json({
       success: true,
       user: {
