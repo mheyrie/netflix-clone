@@ -86,10 +86,10 @@ export async function login(req, res) {
       return res.status(400).json({success: false, message: "Invalid credentials"})
     }
     generateTokenAndSetCookie(user._id, res)
-    res.status(201).json({
+    res.status(200).json({
       success: true,
       user: {
-        ...newUser._doc,
+        ...user._doc,
         password: "",
       },
     });
