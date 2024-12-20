@@ -18,4 +18,5 @@ export const fetchFromTMDB = async (url) => {
     },
   };
   const response = await axios.get(url, options)
+  return response.data
 };
