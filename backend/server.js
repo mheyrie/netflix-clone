@@ -10,6 +10,7 @@ const PORT = ENV_VARS.PORT;
 app.use(express.json()); //Allow use to use/parse req.body
 
 app.use("/api/v1/auth", authRoutes);
+app.use("/api/v1/auth", authRoutes);
 
 app.listen(PORT, () => {
   console.log("Server started at http://localhost:" + PORT);
