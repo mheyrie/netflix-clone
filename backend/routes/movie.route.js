@@ -2,6 +2,6 @@ import express from "express";
 
 const router = express.Router()
 
-router.get(' /trending', getTremdimg)
+router.get(' /trending', getTrendingMovies)
 
 export default router
