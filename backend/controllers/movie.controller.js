@@ -10,6 +10,6 @@ export async function getTrendingMovie(req, res) {
     );
     res.json({success:true, content:randomMovie})
   } catch (error) {
-    
+    res.status(500).json
   }
 }
