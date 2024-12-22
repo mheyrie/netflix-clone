@@ -9,5 +9,7 @@ export async function getTrendingMovie(req, res) {
       Math.floor(Math.random() * data.results?.length)
     );
     res.json({success:true, content:randomMovie})
-  } catch (error) {}
+  } catch (error) {
+    
+  }
 }
