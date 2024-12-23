@@ -13,3 +13,6 @@ export async function getTrendingMovie(req, res) {
     res.status(500).json({ success: false, message: " Internal Server Error" });
   }
 }
+
+
+export async function getMovieTrailers
