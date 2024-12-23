@@ -34,6 +34,11 @@ export async function getMovieDetails(req, res) {
     const data = fetchFromTMDB(
       `https://api.themoviedb.org/3/movie/${id}?language=en-US`
     );
-    res.status(200).json({success: true, content:data})
-  } catch (err) {}
+    res.status(200).json({ success: true, content: data });
+  } catch (err) {
+    if (err.message.includes(" 404")) {
+        return res.status(404).send(null);
+      }
+      res.status(500).json({ success: false, message: "Internal Server error" });
+  }
 }
