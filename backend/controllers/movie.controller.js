@@ -32,7 +32,7 @@ export async function getMovieDetails(req, res) {
   const { id } = req.params;
   try {
     const data = await fetchFromTMDB(
-      `https://api.themoviedb.org/3/movie/${id}/similar?language=en-US&page=1`
+      `https://api.themoviedb.org/3/movie/${id}?language=en-US`
     );
     res.status(200).json({ success: true, content: data });
   } catch (err) {
@@ -46,7 +46,7 @@ export async function getSimilarMovies(req, res) {
   const { id } = req.params;
   try {
     const data = await fetchFromTMDB(
-      `https://api.themoviedb.org/3/movie/${id}?language=en-US`
+      `https://api.themoviedb.org/3/movie/${id}/similar?language=en-US&page=1`
     );
     res.status(200).json({ success: true, content: data });
   } catch (err) {
