@@ -59,10 +59,12 @@ export async function getMoviesByCategory(req, res) {
   const { id } = req.params;
   try {
     const data = await fetchFromTMDB(
-      `https://api.themoviedb.org/3/movie/${id}/similar?language=en-US&page=1`
+      `https://api.themoviedb.org/3/person/popular?language=en-US&page=1`
     );
     res.status(200).json({ success: true, similar: data.results });
   } catch (err) {
     res.status(500).json({ success: false, message: "Internal Server error" });
   }
 }
+
+
