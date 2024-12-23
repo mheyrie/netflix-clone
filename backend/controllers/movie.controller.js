@@ -27,3 +27,12 @@ export async function getMovieTrailers(req, res) {
     res.status(500).json({ success: false, message: "Internal Server error" });
   }
 }
+
+export async function getMovieDetails(req, res) {
+  const { id } = req.params;
+  try {
+    const data = fetchFromTMDB(
+      `https://api.themoviedb.org/3/movie/${id}?language=en-US`
+    );
+  } catch (err) {}
+}
