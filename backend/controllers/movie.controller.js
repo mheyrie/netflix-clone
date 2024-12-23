@@ -22,5 +22,6 @@ export async function getMovieTrailers(req, res) {
     if(err.message.includes(' 404')){
         return res.status(404).send(null)
     }
+    res.status(500).json({success: false})
   }
 }
