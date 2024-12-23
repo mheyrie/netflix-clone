@@ -15,4 +15,10 @@ export async function getTrendingMovie(req, res) {
 }
 
 
-export async function getMovieTrailers
+export async function getMovieTrailers(req, res){
+    try{
+
+    }catch(err){
+        
+    }
+}
