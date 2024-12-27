@@ -55,7 +55,7 @@ export async function getSimilarTvs(req, res) {
   }
 }
 
-export async function getMoviesByCategory(req, res) {
+export async function getTvsByCategory(req, res) {
   const { category } = req.params;
   try {
     const data = await fetchFromTMDB(
