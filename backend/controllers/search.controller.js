@@ -7,7 +7,9 @@ export async function searchPerson(req, res) {
             res.status(404).send(null)
         }
         res.status(200).jsonn({ success: true, content: response.results })
-    } catch (err) { console.log(err) }
+    } catch (err) { console.log("Error in searchPerson controller: ", err.message) ;
+        res.status(500).send({ success: false, message: "Internal server error" });
+    }
 }
 
 export async function searchMovie(req, res) {
