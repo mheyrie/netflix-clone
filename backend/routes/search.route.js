@@ -1,4 +1,5 @@
 import express from "express";
+import { searchMovie, searchPerson, searchTv } from "../controllers/search.controller";
 
 const router = express.Router();
 
