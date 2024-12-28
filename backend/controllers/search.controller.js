@@ -9,7 +9,13 @@ export async function searchPerson(req, res) {
         if (response.results.length === 0) {
             res.status(404).send(null)
         }
-        User
+        await User.findByIdAndUpdate(req.user._id, { $push: { searchHistory: {
+            id: response.results[0].id,
+            image: response.results[0].profile_path,
+            title: response.results[0].name,
+            searchType: "person",
+            createdAt: new Date(),
+        } } });
         res.status(200).jsonn({ success: true, content: response.results })
     } catch (err) { console.log("Error in searchPerson controller: ", err.message) ;
         res.status(500).send({ success: false, message: "Internal server error" });
