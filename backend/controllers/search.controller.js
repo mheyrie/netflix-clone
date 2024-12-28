@@ -6,6 +6,7 @@ export async function searchPerson(req, res) {
     if(response.results.length === 0){
       res.status(404).send(null)
     }
+res.status(200).jsonn({success:true, content:response.results})
   }catch(err){console.log(err)}
 }
 
