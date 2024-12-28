@@ -46,7 +46,12 @@ export async function searchMovie(req, res) {
 }
 
 export async function searchTv(req, res) {
-    const query = req.params.query;
-    const results = await searchTvQuery(query);
-    res.json(results);
+    const {query} = req.params;
+    try{
+        const response = await fetchFromTMDB(`'https://api.themoviedb.org/3/search/tv?query=${query}&include_adult=false&language=en-US&page=1`);
+
+    }catch(err){
+        console.log("Error in searchTv controller: ", err.message);
+        res.status(500).send({success: false, message: "Internal server error"});
+    }
 }
