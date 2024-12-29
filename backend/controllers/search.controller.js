@@ -66,4 +66,11 @@ export async function searchTv(req, res) {
     }
 }
 
-export async function getSearchHistory(req, res){}
+export async function getSearchHistory(req, res){
+    try{
+
+    }catch(err){
+        console.log("Error in getSearchHistory controller: ", err.message);
+        res.status(500).send({success: false, message: "Internal server error"});
+    }
+}
