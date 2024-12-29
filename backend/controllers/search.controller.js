@@ -65,3 +65,5 @@ export async function searchTv(req, res) {
         res.status(500).send({success: false, message: "Internal server error"});
     }
 }
+
+export async function getSearchHistory(req, res){}
