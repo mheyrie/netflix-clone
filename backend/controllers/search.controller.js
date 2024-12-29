@@ -86,3 +86,12 @@ export async function getSearchHistory(req, res) {
         res.status(500).send({ success: false, message: "Internal server error" });
     }
 }
+
+export async function removeItemFromHistory(req, res){
+    const { id } = req.params;
+    try{
+        
+    }catch(err){
+        res.status(500).send({success:false, message:"Internal server error"});
+    }
+}
