@@ -73,7 +73,7 @@ export async function searchTv(req, res) {
                 }
             }
         });
-
+res.status(200).json({ success: true, content: response.results });
     } catch (err) {
         console.log("Error in searchTv controller: ", err.message);
         res.status(500).send({ success: false, message: "Internal server error" });
