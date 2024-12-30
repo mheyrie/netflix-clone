@@ -91,6 +91,13 @@ export async function getSearchHistory(req, res) {
 export async function removeItemFromHistory(req, res){
     const { id } = req.params;
     try{
+        await User.findByIdAndUpdate(req.user._id, {
+            $pull: {
+                searchHistory: {
+                    id: parseInt(id)
+                }
+            }
+        });
         
     }catch(err){
         res.status(500).send({success:false, message:"Internal server error"});
