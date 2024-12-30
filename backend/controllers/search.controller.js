@@ -98,8 +98,9 @@ export async function removeItemFromHistory(req, res){
                 }
             }
         });
-        
+        res.status(200).json({success:true, message:"Item removed from history"});
     }catch(err){
+        console.log("Error in removeItemFromHistory controller: ", err.message);
         res.status(500).send({success:false, message:"Internal server error"});
     }
 }
