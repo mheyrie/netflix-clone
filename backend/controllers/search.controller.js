@@ -20,7 +20,7 @@ export async function searchPerson(req, res) {
                 }
             }
         });
-        res.status(200).jsonn({ success: true, content: response.results })
+        res.status(200).json({ success: true, content: response.results })
     } catch (err) {
         console.log("Error in searchPerson controller: ", err.message);
         res.status(500).send({ success: false, message: "Internal server error" });
