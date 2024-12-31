@@ -30,7 +30,7 @@ export default function SignupPage() {
             <p className=""></p>
           </>
           <h1 className="text-white text-center text-xl font-bold">Sign Up</h1>
-          <form action="" className="space-y-4 max-w-md mx-auto">
+          <form onSubmit={handleSubmit} className="space-y-4 max-w-md mx-auto">
             <div>
               <label
                 htmlFor="email"
@@ -79,7 +79,7 @@ export default function SignupPage() {
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>
-            <button className="w-full py-2 bg-red-600 text-white font-semibold rounded-md hover:bg-red-700" onClick={handleSubmit}>Sign Up</button>
+            <button className="w-full py-2 bg-red-600 text-white font-semibold rounded-md hover:bg-red-700" >Sign Up</button>
           </form>
           <div className="text-center text-gray-400">
             Already have an account?{" "}
