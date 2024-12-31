@@ -13,8 +13,9 @@ export default function TextAnimation() {
           margin: "0 auto",
       }}
       initial={{ width: 0 }}
-      transition={{ duration: 2, ease: "easeInOut" }}
+      transition={{ duration: 2, ease: "easeInOut", repeat: Infinity }}
       animate={{ width: "100%" }}
+ 
     >
       Unlimited Movies, TV shows, and more.....
     </motion.h1>
