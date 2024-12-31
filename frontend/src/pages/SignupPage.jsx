@@ -13,7 +13,7 @@ export default function SignupPage() {
         </Link>
       </header>
       <div className="flex justify-center items-center mt-20 mx-3">
-        <div className="w-full max-w-2xl p-8 space-y-4 bg-black/60 rounded-lg shadow-md">
+        <div className="w-full p-8 space-y-4 bg-black/60 rounded-lg shadow-md">
           <TextAnimation />
           <p className=""></p>
         </div>
