@@ -20,7 +20,7 @@ e.preventDefault();
         </Link>
       </header>
       <div className="flex justify-center items-center mt-20 mx-3">
-        <div className="w-full p-8 space-y-4 bg-black/60 rounded-lg shadow-md mx-auto">
+        <div className="w-full max-w-xl p-8 space-y-4 bg-black/60 rounded-lg shadow-md mx-auto">
          
           <h1 className="text-white text-center text-xl font-bold">Login In</h1>
           <form onSubmit={handleLogin} className="space-y-4 max-w-md mx-auto">
