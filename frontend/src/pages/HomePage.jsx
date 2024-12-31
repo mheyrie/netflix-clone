@@ -1,5 +1,5 @@
 export default function HomePage() {
   return (
-    <div>HomePage</div>
+    <div className="hero-bg h-screen">HomePage</div>
   )
 }
