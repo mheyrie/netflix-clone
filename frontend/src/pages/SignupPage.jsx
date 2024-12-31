@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import TextAnimation from "../utils/TextAnimation";
 
 export default function SignupPage() {
   return (
@@ -12,8 +13,9 @@ export default function SignupPage() {
         </Link>
       </header>
       <div className="flex justify-center items-center mt-20 mx-3">
-        <div className="w-full max-w-md p-8 space-y-4 bg-black/60 rounded-lg shadow-md">
-          <h1 className="text-center text-white">Sign Up</h1>
+        <div className="w-full max-w-2xl p-8 space-y-4 bg-black/60 rounded-lg shadow-md">
+          <TextAnimation />
+          <p className=""></p>
         </div>
       </div>
     </div>
