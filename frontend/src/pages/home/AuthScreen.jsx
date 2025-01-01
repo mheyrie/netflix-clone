@@ -87,6 +87,12 @@ export default function AuthScreen() {
           </div>
         </div>
       </div>
+
+      {/* first section  */}
+      <div className="-mt-2 py-10 bg-black text-white">
+        <div className=""></div>
+        <div className=""></div>
+      </div>
     </div>
   );
 }
