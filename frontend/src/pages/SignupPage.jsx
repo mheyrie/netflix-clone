@@ -16,10 +16,12 @@ export default function SignupPage() {
         <Link to={"/"}>
           <img src="/netflix-logo.png" alt="logo" className="w-52" />
         </Link>
-           </header>
+      </header>
       <div className="flex justify-center items-center mt-20 mx-3">
         <div className="w-full max-w-md p-8 space-y-4 bg-black/60 rounded-lg shadow-md">
-          <h1 className="text-white text-center text-xl font-bold mb-4">Sign Up</h1>
+          <h1 className="text-white text-center text-xl font-bold mb-4">
+            Sign Up
+          </h1>
           <form onSubmit={handleSubmit} className="space-y-4 max-w-md mx-auto">
             <div>
               <label

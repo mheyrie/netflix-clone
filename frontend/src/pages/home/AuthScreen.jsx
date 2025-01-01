@@ -27,7 +27,7 @@ export default function AuthScreen() {
         <p className="text-lg mb-4">
           Ready to watch? Enter your email to create or restart your membership.
         </p>
-        <form className="flex flex-col md:flex-row gap-4 w-1/2">
+        <form className="flex flex-col md:flex-row gap-2 w-1/2">
           <input
             type="email"
             placeholder="Email address"
@@ -45,7 +45,7 @@ export default function AuthScreen() {
       {/* separator  */}
     <div className="h-2 w-full bg-[#232323]" aria-hidden='true'/>
 
-    
+
     </div>
   );
 }
