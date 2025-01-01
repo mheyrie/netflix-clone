@@ -1,4 +1,4 @@
-import TextAnimation from "../utils/TextAnimation";
+import TextAnimation from "../../utils/TextAnimation";
 
 export default function HomePage() {
   return (
