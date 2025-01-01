@@ -16,12 +16,7 @@ export default function SignupPage() {
         <Link to={"/"}>
           <img src="/netflix-logo.png" alt="logo" className="w-52" />
         </Link>
-        {/* <Link to={"/login"}>
-          <button className="bg-red-600 text-white font-bold p-2 px-3 rounded-md">
-            Sign In
-          </button>
-        </Link> */}
-      </header>
+           </header>
       <div className="flex justify-center items-center mt-20 mx-3">
         <div className="w-full max-w-md p-8 space-y-4 bg-black/60 rounded-lg shadow-md">
           <h1 className="text-white text-center text-xl font-bold mb-4">Sign Up</h1>

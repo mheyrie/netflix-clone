@@ -10,12 +10,12 @@ export default function TextAnimation() {
         color: "white",
         textAlign: "center",
         width: "90%",
-          margin: "0 auto",
+        margin: "0 auto",
+        fontWeight: "700",
       }}
       initial={{ width: 0 }}
       transition={{ duration: 2, ease: "easeInOut", repeat: Infinity }}
       animate={{ width: "100%" }}
- 
     >
       Unlimited Movies, TV shows, and more.....
     </motion.h1>
