@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import TextAnimation from "../../utils/TextAnimation";
 import { useState } from "react";
+import { ChevronRight } from "lucide-react";
 
 export default function AuthScreen() {
   const [email, setEmail] = useState("");
@@ -36,6 +37,7 @@ export default function AuthScreen() {
           />
           <button className="bg-red-600 text-white text-xl lg:text-2xl px-2 lg:px-6 py-1 md:py-2 rounded flex justify-center items-center">
             Get Started
+            <ChevronRight className="size-6"/>
           </button>
         </form>
       </div>
