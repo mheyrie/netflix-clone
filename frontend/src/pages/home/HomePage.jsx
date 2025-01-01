@@ -1,11 +1,11 @@
-import TextAnimation from "../../utils/TextAnimation";
+import AuthScreen from "./AuthScreen"
+import HomeScreen from "./HomeScreen"
+
 
 export default function HomePage() {
+  const user = false
   return (
-    <div className="hero-bg h-screen">
-      <>
-            <TextAnimation />
-            <p className=""></p>
-          </>HomePage</div>
+    <div>
+    {user?<HomeScreen/>:<AuthScreen/>}</div>
   )
 }

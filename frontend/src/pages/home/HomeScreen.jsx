@@ -1,5 +1,14 @@
+import TextAnimation from "../../utils/TextAnimation";
+
 export default function HomeScreen() {
   return (
-    <div>HomeScreen</div>
+    <div>HomeScreen
+
+
+<>
+            <TextAnimation />
+            <p className=""></p>
+          </>
+    </div>
   )
 }
