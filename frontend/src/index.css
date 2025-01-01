@@ -2,7 +2,281 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Homepage(Auth)  */
+.hero-bg {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.1)),
+    url("hero.png");
+}
 
-.hero-bg{
-    background-image:linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.1)), url("hero.png");
+.home-hero {
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+}
+
+.first {
+  background: radial-gradient(11% 56% at 17% 50%, #461518 0%, transparent 100%),
+    radial-gradient(11% 56% at 83% 50%, #461518 0%, transparent 100%);
+  bottom: 100px;
+  left: 50%;
+  width: 165rem;
+  z-index: 1;
+  transform: translateX(-50%);
+}
+.second {
+  background: linear-gradient(
+    0deg,
+    transparent 0%,
+    #6f181d 50%,
+    transparent 100%
+  );
+  bottom: 100px;
+  left: (50% - 0.25rem);
+  width: 120.5rem;
+  z-index: 2;
+  transform: translate(calc(-50% + 0.25rem), 0px);
+}
+
+.nav-container {
+  width: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.7889) 8.333%,
+    rgba(0, 0, 0, 0.7556) 16.67%,
+    rgba(0, 0, 0, 0.7) 25%,
+    rgba(0, 0, 0, 0.6222) 33.33%,
+    rgba(0, 0, 0, 0.5222) 41.67%,
+    rgba(0, 0, 0, 0.4) 50%,
+    rgba(0, 0, 0, 0.2778) 58.33%,
+    rgba(0, 0, 0, 0.1778) 66.67%,
+    rgba(0, 0, 0, 0.1) 75%,
+    rgba(0, 0, 0, 0.04444) 83.33%,
+    rgba(0, 0, 0, 0.01111) 91.67%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+.nav-first {
+  padding: 0, 1.5rem;
+  width: 100%;
+  max-width: 120rem;
+  height: 7.5rem;
+  margin: 0 auto -7.5rem auto;
+}
+
+.main-hero {
+  z-index: 1;
+  width: 100%;
+  max-width: 120rem;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+.inner-one {
+  overflow: hidden;
+  display: flex;
+  position: relative;
+  margin: 0 auto;
+  padding-top: 100px;
+  background-size: cover;
+  background-position: center;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 3;
+}
+
+.inner-one::before {
+  content: "";
+  width: 1px;
+  margin-left: -1px;
+  height: 0;
+  padding-top: 46.666666666666664%;
+  box-sizing: border-box;
+}
+.hero-viv {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  background-image: linear-gradient(
+    360deg,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0.8965) 8.5%,
+    rgba(0, 0, 0, 0.8861) 17%,
+    rgba(0, 0, 0, 0.8688) 25.5%,
+    rgba(0, 0, 0, 0.8444) 34%,
+    rgba(0, 0, 0, 0.8132) 42.5%,
+    rgba(0, 0, 0, 0.775) 51%,
+    rgba(0, 0, 0, 0.7368) 59.5%,
+    rgba(0, 0, 0, 0.7056) 68%,
+    rgba(0, 0, 0, 0.6813) 76.5%,
+    rgba(0, 0, 0, 0.6639) 85%,
+    rgba(0, 0, 0, 0.6535) 93.5%,
+    rgba(0, 0, 0, 0.65) 102%
+  );
+}
+
+.inner-two {
+  min-height: 31rem;
+  margin: -2rem auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  /* min-height: 80vh; */
+  width: 100%;
+  max-width: 120rem;
+  justify-content: center;
+  padding: 0 2rem 2rem 2rem;
+  justify-items: center;
+}
+
+.curve-one {
+  box-sizing: border-box;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  border: solid 0.25rem transparent;
+  border-top-left-radius: 50% 100%;
+  border-top-right-radius: 50% 100%;
+  border-bottom: none;
+  background: radial-gradient(
+      50% 500% at 50% -420%,
+      rgba(64, 97, 231, 0.4) 80%,
+      rgba(0, 0, 0, 0.1) 100%
+    ),
+    black;
+  background-clip: padding-box;
+  width: 200%;
+  left: -50%;
+}
+
+.curve-one::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  margin-top: -0.25rem;
+  border-radius: inherit;
+  background: linear-gradient(
+    to right,
+    rgba(33, 13, 22, 1) 16%,
+    rgba(184, 40, 105, 1),
+    rgba(229, 9, 20, 1),
+    rgba(184, 40, 105, 1),
+    rgba(33, 13, 22, 1) 84%
+  );
+}
+
+/* media queries  */
+@media (min-width: 1280px) {
+  .nav-first {
+    padding: 0, 9.25rem;
+  }
+  .hero-viv {
+    background-image: linear-gradient(
+      7deg,
+      rgba(0, 0, 0, 0.85) 10%,
+      rgba(0, 0, 0, 0.8465) 17.25%,
+      rgba(0, 0, 0, 0.8361) 24.5%,
+      rgba(0, 0, 0, 0.8187) 31.75%,
+      rgba(0, 0, 0, 0.7944) 39%,
+      rgba(0, 0, 0, 0.7632) 46.25%,
+      rgba(0, 0, 0, 0.725) 53.5%,
+      rgba(0, 0, 0, 0.6868) 60.75%,
+      rgba(0, 0, 0, 0.6556) 68%,
+      rgba(0, 0, 0, 0.6312) 75.25%,
+      rgba(0, 0, 0, 0.6139) 82.5%,
+      rgba(0, 0, 0, 0.6035) 89.75%,
+      rgba(0, 0, 0, 0.6) 97%
+    );
+  }
+  .inner-two {
+    min-height: min(80vh, 45rem);
+  }
+  .unk {
+    margin-top: 1.375rem;
+  }
+  .curve-one {
+    width: 130%;
+    left: -15%;
+  }
+}
+@media (min-width: 960px) {
+  .nav-first {
+    padding: 0, 5rem;
+  }
+  .hero-viv {
+    background-image: linear-gradient(
+      12deg,
+      rgba(0, 0, 0, 0.85) 36%,
+      rgba(0, 0, 0, 0.8465) 40.58%,
+      rgba(0, 0, 0, 0.8361) 45.17%,
+      rgba(0, 0, 0, 0.8187) 49.75%,
+      rgba(0, 0, 0, 0.7944) 54.33%,
+      rgba(0, 0, 0, 0.7632) 58.92%,
+      rgba(0, 0, 0, 0.725) 63.5%,
+      rgba(0, 0, 0, 0.6868) 68.08%,
+      rgba(0, 0, 0, 0.6556) 72.67%,
+      rgba(0, 0, 0, 0.6313) 77.25%,
+      rgba(0, 0, 0, 0.6139) 81.83%,
+      rgba(0, 0, 0, 0.6035) 86.42%,
+      rgba(0, 0, 0, 0.6) 91%
+    );
+  }
+  .inner-two {
+    min-height: 37rem;
+  }
+  .unk {
+    margin-top: 1.275rem;
+  }
+  .curve-one {
+    width: 150%;
+    left: -25%;
+  }
+}
+@media (min-width: 600px) {
+  .nav-first {
+    padding: 0, 2rem;
+  }
+  .hero-viv {
+    background-image: linear-gradient(
+      360deg,
+      rgba(0, 0, 0, 0.85) 3%,
+      rgba(0, 0, 0, 0.8465) 11.08%,
+      rgba(0, 0, 0, 0.8361) 19.17%,
+      rgba(0, 0, 0, 0.8187) 27.25%,
+      rgba(0, 0, 0, 0.7944) 35.33%,
+      rgba(0, 0, 0, 0.7632) 43.42%,
+      rgba(0, 0, 0, 0.725) 51.5%,
+      rgba(0, 0, 0, 0.6868) 59.58%,
+      rgba(0, 0, 0, 0.6556) 67.67%,
+      rgba(0, 0, 0, 0.6313) 75.75%,
+      rgba(0, 0, 0, 0.6139) 83.83%,
+      rgba(0, 0, 0, 0.6035) 91.92%,
+      rgba(0, 0, 0, 0.6) 100%
+    );
+  }
+  .unk {
+    margin-top: 1.875rem;
+  }
+  .curve-one {
+    width: 180%;
+    left: -40%;
+  }
 }
