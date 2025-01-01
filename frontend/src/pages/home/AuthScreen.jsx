@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import TextAnimation from "../../utils/TextAnimation";
+import { useState } from "react";
 
 export default function AuthScreen() {
+  const [email, setEmail] = useState("");
   return (
     <div className="hero-bg relative">
       {/* Navbar  */}
@@ -24,16 +26,18 @@ export default function AuthScreen() {
         <p className="text-lg mb-4">
           Ready to watch? Enter your email to create or restart your membership.
         </p>
-        <div className="flex mt-6">
+        <form className="flex flex-col md:flex-row gap-4 w-1/2">
           <input
             type="email"
             placeholder="Email address"
-            className="p-3 rounded-l-md focus:outline-none"
+            className="p-3 rounded flex-1 bg-black/80 border border-gray-700 focus:outline-none"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
-          <button className="bg-red-600 text-white font-bold p-3 px-6 rounded-r-md">
+          <button className="bg-red-600 text-white text-xl lg:text-2xl px-2 lg:px-6 py-1 md:py-2 rounded flex justify-center items-center">
             Get Started
           </button>
-        </div>
+        </form>
       </div>
     </div>
   );
