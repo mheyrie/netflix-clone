@@ -91,8 +91,9 @@ export default function AuthScreen() {
       {/* first section  */}
       <div className="-mt-2 py-10 bg-black text-white">
         <div className="flex max-w-6xl mx-auto items-center justify-center md:flex-row flex-col px-4 md:px-2">
-          <div className="flex-1">
-            
+          <div className="flex-1 text-center md:text-left">
+          <h2 className="">Enjoy your TV</h2>
+          <p className="text-lg md:text-xl">Watch on Smart TVs, PayStattion, Xbox, Chromecast, Apple TV, Blu-ray players,nd more.</p>
           </div>
           <div className="flex-1">right</div>
         </div>
