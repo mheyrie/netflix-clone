@@ -97,6 +97,9 @@ export default function AuthScreen() {
           </div>
           <div className="flex-1">
             <img src="/tv.png" alt="tv image" />
+            <video className="absolute top-1/2 lft-1/2 -translate-x-1/2 -translate-y-1/2">
+              <source src="/hero-vid.m4v" type="video/mp4" />
+            </video>
           </div>
         </div>
       </div>
