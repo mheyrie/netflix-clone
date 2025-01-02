@@ -95,7 +95,9 @@ export default function AuthScreen() {
           <h2 className="">Enjoy your TV</h2>
           <p className="text-lg md:text-xl">Watch on Smart TVs, PayStattion, Xbox, Chromecast, Apple TV, Blu-ray players,nd more.</p>
           </div>
-          <div className="flex-1">right</div>
+          <div className="flex-1">
+            <img src="/tv.png" alt="tv image" />
+          </div>
         </div>
       </div>
     </div>
