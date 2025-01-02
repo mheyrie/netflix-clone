@@ -117,7 +117,7 @@ export default function AuthScreen() {
 
       {/* second section */}
       <div className="py-10 bg-black text-white">
-        <div className="flex max-w-6xl mx-auto items-center justify-center md:flex-row flex-col px-4 md:px-2">
+        <div className="flex max-w-6xl mx-auto items-center justify-center md:flex-row flex-col-reverse px-4 md:px-2">
           <div className="flex-1">
             <div className="relative">
               <img
@@ -145,9 +145,9 @@ export default function AuthScreen() {
               </div>
             </div>
           </div>
-          <div className="flex-1">
+          <div className="flex-1 md:text-left text-center">
             <h2 className="text-4xl md:text-5xl font-extrabold mb-4 text-balance">
-              Download your shows to watc offline 
+              Download your shows to watch offline 
             </h2>
             <p className="text-lg md:text-xl">
               Save your favorites easily and always have something to watch.
@@ -155,6 +155,8 @@ export default function AuthScreen() {
           </div>
         </div>
       </div>
+        {/* separator  */}
+        <div className="h-2 w-full bg-[#232323]" aria-hidden="true" />
     </div>
   );
 }
