@@ -147,7 +147,7 @@ export default function AuthScreen() {
           </div>
           <div className="flex-1 md:text-left text-center">
             <h2 className="text-4xl md:text-5xl font-extrabold mb-4 text-balance">
-              Download your shows to watch offline 
+              Download your shows to watch offline
             </h2>
             <p className="text-lg md:text-xl">
               Save your favorites easily and always have something to watch.
@@ -155,8 +155,10 @@ export default function AuthScreen() {
           </div>
         </div>
       </div>
-        {/* separator  */}
-        <div className="h-2 w-full bg-[#232323]" aria-hidden="true" />
+      {/* separator  */}
+      <div className="h-2 w-full bg-[#232323]" aria-hidden="true" />
+
+      {/* third section  */}
     </div>
   );
 }
