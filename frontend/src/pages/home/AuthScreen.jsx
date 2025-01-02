@@ -131,7 +131,14 @@ export default function AuthScreen() {
                   alt="image"
                   className="h-full"
                 />
-                <div className=""></div>
+                <div className="flex justify-center items-center w-full">
+                  <div className="flex flex-col gap-0">
+                    <span className="text-md lg:text-lg font-bold">Stranger Things</span>
+                    <span className="text-sm text-blue-500">Downloading...</span>
+                  </div>
+
+                  
+                </div>
               </div>
             </div>
           </div>
