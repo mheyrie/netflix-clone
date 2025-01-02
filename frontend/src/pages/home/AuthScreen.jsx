@@ -117,7 +117,7 @@ export default function AuthScreen() {
 
       {/* second section */}
       <div className="py-10 bg-black text-white">
-        <div className="flex max-w6xl mx-auto items-center justify-center md:flex-row flex-col px-4 md:px-2">
+        <div className="flex max-w-6xl mx-auto items-center justify-center md:flex-row flex-col px-4 md:px-2">
           <div className="flex-1">
             <div className="relative">
               <img
@@ -125,19 +125,22 @@ export default function AuthScreen() {
                 alt="Strange thing"
                 className="mt-4"
               />
-              <div className="flex items-center gap-2 absolute bottom-5 left-1.2 -translate-x-1/2 bg-black w-3/4 lg:w-1/2 h-25 border border-slate-00 rounded-md px-2">
+              <div className="flex items-center gap-2 absolute bottom-5 left-1/2 -translate-x-1/2 bg-black w-3/4 lg:w-1/2 h-25 border border-slate-500 rounded-md px-2">
                 <img
                   src="/stranger-things-sm.png"
                   alt="image"
                   className="h-full"
                 />
-                <div className="flex justify-center items-center w-full">
+                <div className="flex justify-between items-center w-full">
                   <div className="flex flex-col gap-0">
-                    <span className="text-md lg:text-lg font-bold">Stranger Things</span>
-                    <span className="text-sm text-blue-500">Downloading...</span>
+                    <span className="text-md lg:text-lg font-bold">
+                      Stranger Things
+                    </span>
+                    <span className="text-sm text-blue-500">
+                      Downloading...
+                    </span>
                   </div>
-
-                  
+                  <img src="/download-icon.gif" alt="" className="h-12" />
                 </div>
               </div>
             </div>
