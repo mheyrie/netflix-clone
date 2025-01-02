@@ -92,16 +92,21 @@ export default function AuthScreen() {
       <div className="-mt-2 py-10 bg-black text-white">
         <div className="flex max-w-6xl mx-auto items-center justify-center md:flex-row flex-col px-4 md:px-2">
           <div className="flex-1 text-center md:text-left">
-          <h2 className="">Enjoy your TV</h2>
-          <p className="text-lg md:text-xl">Watch on Smart TVs, PayStattion, Xbox, Chromecast, Apple TV, Blu-ray players,nd more.</p>
+            <h2 className="">Enjoy your TV</h2>
+            <p className="text-lg md:text-xl">
+              Watch on Smart TVs, PayStattion, Xbox, Chromecast, Apple TV,
+              Blu-ray players,nd more.
+            </p>
           </div>
           <div className="flex-1 relative">
-            <img src="/tv.png" alt="tv image" className="mt-4" />
-            <video className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-1/2 z-10"
-            playsInline
-            autoPlay={true}
-            muted
-            loop>
+            <img src="/tv.png" alt="tv image" className="mt-4 z-20 relative" />
+            <video
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-1/2 z-10"
+              playsInline
+              autoPlay={true}
+              muted
+              loop
+            >
               <source src="/hero-vid.m4v" type="video/mp4" />
             </video>
           </div>
