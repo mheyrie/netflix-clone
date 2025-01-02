@@ -90,7 +90,7 @@ export default function AuthScreen() {
 
       {/* first section  */}
       <div className="-mt-2 py-10 bg-black text-white">
-        <div className="flex max-w-6xl mx-auto items-center justify-center "></div>
+        <div className="flex max-w-6xl mx-auto items-center justify-center md:flex-row"></div>
         <div className=""></div>
       </div>
     </div>
