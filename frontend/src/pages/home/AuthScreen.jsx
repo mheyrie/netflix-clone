@@ -112,6 +112,20 @@ export default function AuthScreen() {
           </div>
         </div>
       </div>
+      {/* separator  */}
+      <div className="h-2 w-full bg-[#232323]" aria-hidden='true'/>
+
+      {/* second section */}
+      <div className="py-10 bg-black text-white">
+        <div className="flex max-w6xl mx-auto items-center justify-center md:flex-row flex-col px-4 md:px-2">
+          <div className="flex-1">
+            <div className="relative">
+              <img src="/stranger-things-lg.png" alt="Strange thing" className="mt-4" />
+            </div>
+          </div>
+          <div className=""></div>
+        </div>
+      </div>
     </div>
   );
 }
