@@ -113,17 +113,29 @@ export default function AuthScreen() {
         </div>
       </div>
       {/* separator  */}
-      <div className="h-2 w-full bg-[#232323]" aria-hidden='true'/>
+      <div className="h-2 w-full bg-[#232323]" aria-hidden="true" />
 
       {/* second section */}
       <div className="py-10 bg-black text-white">
         <div className="flex max-w6xl mx-auto items-center justify-center md:flex-row flex-col px-4 md:px-2">
           <div className="flex-1">
             <div className="relative">
-              <img src="/stranger-things-lg.png" alt="Strange thing" className="mt-4" />
+              <img
+                src="/stranger-things-lg.png"
+                alt="Strange thing"
+                className="mt-4"
+              />
+              <div className="flex items-center gap-2 absolute bottom-5 left-1.2 -translate-x-1/2 bg-black w-3/4 lg:w-1/2 h-25 border border-slate-00 rounded-md px-2">
+                <img
+                  src="/stranger-things-sm.png"
+                  alt="image"
+                  className="h-full"
+                />
+                <div className=""></div>
+              </div>
             </div>
           </div>
-          <div className=""></div>
+          <div className="flex-1"></div>
         </div>
       </div>
     </div>
