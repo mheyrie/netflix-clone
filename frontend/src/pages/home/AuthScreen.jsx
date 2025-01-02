@@ -125,7 +125,7 @@ export default function AuthScreen() {
                 alt="Strange thing"
                 className="mt-4"
               />
-              <div className="flex items-center gap-2 absolute bottom-5 left-1/2 -translate-x-1/2 bg-black w-3/4 lg:w-1/2 h-25 border border-slate-500 rounded-md px-2">
+              <div className="flex items-center gap-2 absolute bottom-5 left-1/2 -translate-x-1/2 bg-black w-3/4 lg:w-1/2 h-24 border border-slate-500 rounded-md px-2">
                 <img
                   src="/stranger-things-sm.png"
                   alt="image"
@@ -145,7 +145,14 @@ export default function AuthScreen() {
               </div>
             </div>
           </div>
-          <div className="flex-1"></div>
+          <div className="flex-1">
+            <h2 className="text-4xl md:text-5xl font-extrabold mb-4 text-balance">
+              Download your shows to watc offline 
+            </h2>
+            <p className="text-lg md:text-xl">
+              Save your favorites easily and always have something to watch.
+            </p>
+          </div>
         </div>
       </div>
     </div>
