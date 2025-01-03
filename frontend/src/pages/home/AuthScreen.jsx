@@ -205,11 +205,10 @@ export default function AuthScreen() {
           </div>
           <div className="flex-1 text-center md:text-left">
             <h2 className="text-4xl md:text-5xl font-extrabold mb-4">
-              Watch everywhere
+             Create profiles for kids
             </h2>
             <p className="text-lg md:text-xl">
-              Stream unlimited movies and TV shows on your phone, tablet,
-              laptop, and TV without paying more.
+              Send kids in adventures with 
             </p>
           </div>
         </div>
