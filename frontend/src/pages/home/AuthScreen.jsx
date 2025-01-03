@@ -208,7 +208,7 @@ export default function AuthScreen() {
              Create profiles for kids
             </h2>
             <p className="text-lg md:text-xl">
-              Send kids in adventures with 
+              Send kids in adventures with their favorite characters in a space made just for them-free with your membership
             </p>
           </div>
         </div>
