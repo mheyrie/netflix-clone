@@ -198,7 +198,7 @@ export default function AuthScreen() {
         <div className="flex max-w-6xl mx-auto items-center justify-center md:flex-row flex-col-reverse px-4 md:px-2">
           <div className="flex-1 relative overflow-hidden">
             <img
-              src="/.png"
+              src="/kids.png"
               alt="device image"
               className="mt-4 z-20 relative"
             />
