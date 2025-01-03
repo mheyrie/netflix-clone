@@ -201,15 +201,7 @@ export default function AuthScreen() {
           </div>
           <div className="flex-1 relative overflow-hidden">
             <img src="/device-pile.png" alt="device image" className="mt-4 z-20 relative" />
-            <video
-              className="absolute top-2 left-1/2 -translate-x-1/2  h-4/6 z-10 max-w-[63%]"
-              playsInline
-              autoPlay={true}
-              muted
-              loop
-            >
-              <source src="/video-devices.m4v" type="video/mp4" />
-            </video>
+          
           </div>
         </div>
       </div>
