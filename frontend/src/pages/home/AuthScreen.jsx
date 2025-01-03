@@ -196,7 +196,7 @@ export default function AuthScreen() {
       {/* fourth section  */}
       <div className="py-10 bg-black text-white">
         <div className="flex max-w-6xl mx-auto items-center justify-center md:flex-row flex-col-reverse px-4 md:px-2">
-          <div className="flex-1 relative overflow-hidden">
+          <div className="flex-1 relative">
             <img
               src="/kids.png"
               alt="device image"
