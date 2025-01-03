@@ -190,7 +190,7 @@ export default function AuthScreen() {
 
       {/* fourth section  */}
       <div className="py-10 bg-black text-white">
-        <div className="flex max-w-6xl mx-auto items-center justify-center md:flex-row flex-col px-4 md:px-2">
+        <div className="flex max-w-6xl mx-auto items-center justify-center md:flex-row flex-col-reverse px-4 md:px-2">
           <div className="flex-1 text-center md:text-left">
             <h2 className="text-4xl md:text-5xl font-extrabold mb-4">
               Watch everywhere
