@@ -1,12 +1,12 @@
 export default function Footer() {
   return (
-    <footer className="py-6 md:px-8 md:py-0 bg-black text-white border-t border-gray-800 flex justify-center">
+    <footer className="py-10 bg-black text-white">
       <div className="flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
         <div className="text-center md:text-left">
           <p className="text-sm leading-loose text-muted-foreground">
             Questions? Call 1-800-000-0000
           </p>
-          <ul className="grid grid-cols-2 md:grid-cols-4 justify-center md:justify-start gap-4 mt-4">
+          <ul className="grid grid-cols-2 md:grid-cols-4 justify-center md:justify-start gap-4 my-4">
             <li><a href="#" className="text-sm text-muted-foreground">FAQ</a></li>
             <li><a href="#" className="text-sm text-muted-foreground">Help Center</a></li>
             <li><a href="#" className="text-sm text-muted-foreground">Account</a></li>
