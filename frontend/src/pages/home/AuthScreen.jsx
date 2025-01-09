@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import TextAnimation from "../../utils/TextAnimation";
 import { useState } from "react";
 import { ChevronRight } from "lucide-react";
+import Footer from "../../components/Footer";
 
 export default function AuthScreen() {
   const [email, setEmail] = useState("");
@@ -213,6 +214,7 @@ export default function AuthScreen() {
           </div>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }
