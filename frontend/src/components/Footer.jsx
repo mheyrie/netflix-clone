@@ -2,17 +2,31 @@ export default function Footer() {
   return (
     <footer className="py-6 md:px-8 md:py-0 bg-black text-white border-t border-gray-800 flex justify-center">
       <div className="flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
-        <p className="text-balance text-center text-sm leading-loose text-muted-foreground md:text-left">
-          Built by{" "}
-          <a
-            href="https://www.linkedin.com/in/oladele-mary/"
-            target="_blank"
-            className="font-medium underline  underline-offset-4"
-          >
-            Mheyrie. The code is availabale on my github <a href="https://github.com/mheyrie"  target="_blank"
-            className="font-medium underline  underline-offset-4" rel="noreferrer">Github</a>.
-          </a>
-        </p>
+        <div className="text-center md:text-left">
+          <p className="text-sm leading-loose text-muted-foreground">
+            Questions? Call 1-800-000-0000
+          </p>
+          <ul className="grid grid-cols-2 md:grid-cols-4 justify-center md:justify-start gap-4 mt-4">
+            <li><a href="#" className="text-sm text-muted-foreground">FAQ</a></li>
+            <li><a href="#" className="text-sm text-muted-foreground">Help Center</a></li>
+            <li><a href="#" className="text-sm text-muted-foreground">Account</a></li>
+            <li><a href="#" className="text-sm text-muted-foreground">Media Center</a></li>
+            <li><a href="#" className="text-sm text-muted-foreground">Investor Relations</a></li>
+            <li><a href="#" className="text-sm text-muted-foreground">Jobs</a></li>
+            <li><a href="#" className="text-sm text-muted-foreground">Ways to Watch</a></li>
+            <li><a href="#" className="text-sm text-muted-foreground">Terms of Use</a></li>
+            <li><a href="#" className="text-sm text-muted-foreground">Privacy</a></li>
+            <li><a href="#" className="text-sm text-muted-foreground">Cookie Preferences</a></li>
+            <li><a href="#" className="text-sm text-muted-foreground">Corporate Information</a></li>
+            <li><a href="#" className="text-sm text-muted-foreground">Contact Us</a></li>
+            <li><a href="#" className="text-sm text-muted-foreground">Speed Test</a></li>
+            <li><a href="#" className="text-sm text-muted-foreground">Legal Notices</a></li>
+            <li><a href="#" className="text-sm text-muted-foreground">Netflix Originals</a></li>
+          </ul>
+        </div>
+        <div className="mt-4 md:mt-0">
+          <p className="text-sm text-muted-foreground">© 2023 Netflix, Inc.</p>
+        </div>
       </div>
     </footer>
   );
