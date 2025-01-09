@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <footer className="py-20 bg-black text-white flex justify-center">
-      <div className="flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
+      <div className="flex flex-col items-center justify-between ga-4">
         <div className="text-center md:text-left">
           <div>
             <p className="text-sm leading-loose text-muted-foreground">
