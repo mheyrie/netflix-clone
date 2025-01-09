@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <footer className="py-20 bg-black text-white flex justify-center">
-      <div className="flex flex-col items-center justify-between ga-4">
+      <div className="flex flex-col items-start justify-between ga-4">
         <div className="text-center md:text-left">
           <div>
             <p className="text-sm leading-loose text-muted-foreground">
@@ -9,7 +9,7 @@ export default function Footer() {
             </p>
           </div>
           <div>
-            <ul className="grid grid-cols-2 md:grid-cols-4 justify-center md:justify-start gap-4 my-4">
+            <ul className="grid grid-cols-2 md:grid-cols-4 justify-between md:justify-start gap-4 my-4">
               <li>
                 <a href="#" className="text-sm text-muted-foreground">
                   FAQ
