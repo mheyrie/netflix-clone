@@ -6,6 +6,11 @@ import Footer from "../../components/Footer";
 
 export default function AuthScreen() {
   const [email, setEmail] = useState("");
+
+  const handleFormSubmit = (e) => { 
+    e.preventDefault();
+    
+  };
   return (
     <div className="relative w-[100%] h-screen">
       <div className="relative z-[1]  w-[100%]">
@@ -62,7 +67,7 @@ export default function AuthScreen() {
                 </div>
                 <div className="w-full rounded">
                   <div className="flex items-center justify-center">
-                    <form className="flex flex-col md:flex-row gap-2 w-1/2 justify-center">
+                    <form className="flex flex-col md:flex-row gap-2 w-1/2 justify-center" onSubmit={handleFormSubmit}>
                       <input
                         type="email"
                         placeholder="Email address"
