@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import TextAnimation from "../../utils/TextAnimation";
 import { useState } from "react";
 import { ChevronRight } from "lucide-react";
@@ -6,10 +6,11 @@ import Footer from "../../components/Footer";
 
 export default function AuthScreen() {
   const [email, setEmail] = useState("");
+  const navigate = useNavigate();
 
-  const handleFormSubmit = (e) => { 
+  const handleFormSubmit = (e) => {
     e.preventDefault();
-    
+    navigate("/signup?email=" + email);
   };
   return (
     <div className="relative w-[100%] h-screen">
@@ -67,7 +68,10 @@ export default function AuthScreen() {
                 </div>
                 <div className="w-full rounded">
                   <div className="flex items-center justify-center">
-                    <form className="flex flex-col md:flex-row gap-2 w-1/2 justify-center" onSubmit={handleFormSubmit}>
+                    <form
+                      className="flex flex-col md:flex-row gap-2 w-1/2 justify-center"
+                      onSubmit={handleFormSubmit}
+                    >
                       <input
                         type="email"
                         placeholder="Email address"
@@ -211,10 +215,11 @@ export default function AuthScreen() {
           </div>
           <div className="flex-1 text-center md:text-left">
             <h2 className="text-4xl md:text-5xl font-extrabold mb-4">
-             Create profiles for kids
+              Create profiles for kids
             </h2>
             <p className="text-lg md:text-xl">
-              Send kids in adventures with their favorite characters in a space made just for them-free with your membership
+              Send kids in adventures with their favorite characters in a space
+              made just for them-free with your membership
             </p>
           </div>
         </div>
@@ -223,7 +228,7 @@ export default function AuthScreen() {
       <div className="h-2 w-full bg-[#232323]" aria-hidden="true" />
 
       {/* fifth section  */}
-      <Footer/>
+      <Footer />
     </div>
   );
 }
