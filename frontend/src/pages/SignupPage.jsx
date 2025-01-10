@@ -7,9 +7,10 @@ export default function SignupPage() {
   const [password, setPassword] = useState("");
 
   const {searchParams}=new URLSearchParams(document.location.search);
-
-
   
+
+
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(email, username, password);
