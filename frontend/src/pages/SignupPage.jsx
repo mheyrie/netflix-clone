@@ -4,7 +4,7 @@ import { useState } from "react";
 export default function SignupPage() { 
   const {searchParams}=new URLSearchParams(document.location.search);
   const emailValue = searchParams.get('email')
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState(emailValue || "");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
