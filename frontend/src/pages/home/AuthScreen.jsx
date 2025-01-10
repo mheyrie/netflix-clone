@@ -75,7 +75,7 @@ export default function AuthScreen() {
                       <input
                         type="email"
                         placeholder="Email address"
-                        className="p-3 rounded flex-1 bg-black/80 border border-gray-700 focus:outline-none"
+                        className="p-3 rounded flex-1 bg-black/80 border border-gray-700 focus:outline-none text-gray-300"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                       />
