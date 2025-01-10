@@ -1,16 +1,12 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-export default function SignupPage() { 
-  const {searchParams}=new URLSearchParams(document.location.search);
-  const emailValue = searchParams.get('email')
+export default function SignupPage() {
+  const searchParams  = new URLSearchParams(document.location.search);
+  const emailValue = searchParams.get("email");
   const [email, setEmail] = useState(emailValue || "");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-
- 
-
-
 
   const handleSubmit = (e) => {
     e.preventDefault();
