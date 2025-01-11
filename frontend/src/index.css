@@ -16,7 +16,6 @@
 .home-hero {
   transform: translate(-50%, -50%);
   width: 100%;
-  height: 100%;
   max-width: 100%;
   z-index: 1;
   top: 50%;
