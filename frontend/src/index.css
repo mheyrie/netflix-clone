@@ -131,8 +131,7 @@
   margin: -2rem auto 0 auto;
   display: flex;
   flex-direction: column;
-  /* min-height: 80vh; */
-  width: 100%;
+   width: 100%;
   max-width: 120rem;
   justify-content: center;
   padding: 0 2rem 2rem 2rem;
