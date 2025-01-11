@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { useAuthStore } from "../store/authUser";
 
 export default function SignupPage() {
   const searchParams  = new URLSearchParams(document.location.search);
@@ -7,6 +8,8 @@ export default function SignupPage() {
   const [email, setEmail] = useState(emailValue || "");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+
+  const {signup}=useAuthStore();
 
   const handleSubmit = (e) => {
     e.preventDefault();

@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import HomePage from "./pages/home/HomePage";
 import SignupPage from "./pages/SignupPage";
 import Login from "./pages/Login";
+import { Toaster } from "react-hot-toast";
 // import Footer from "./components/Footer";
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
        <Route path="/signup" element={<SignupPage />} />
      </Routes>
      {/* <Footer/> */}
-     
+     <Toaster />
    </>
   );
 }
