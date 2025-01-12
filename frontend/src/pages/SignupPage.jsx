@@ -13,8 +13,7 @@ export default function SignupPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(email, username, password);
-    signup({email, username, password});
+        signup({email, username, password});
   };
   return (
     <div className="h-screen w-full hero-bg">
