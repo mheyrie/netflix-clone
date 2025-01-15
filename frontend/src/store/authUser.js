@@ -23,7 +23,7 @@ logout: async()=>{},
 authCheck: async()=>{
     set({isCheckingAuth:true})
     try{
-
+const response = await axios.get("/api/v1/auth/authCheck");
     }
     catch(error){
 console.log("Error")
