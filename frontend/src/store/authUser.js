@@ -5,6 +5,7 @@ import { create } from "zustand";
 export const useAuthStore = create((set) => ({
 user:null,
 isSigningUp:false,
+isCheckingAuth:true,
 signup: async(credentials)=>{
     set
     try{
@@ -21,7 +22,7 @@ login: async()=>{},
 logout: async()=>{},
 authCheck: async()=>{
     try{
-        
+
     }
     catch(error){
 
