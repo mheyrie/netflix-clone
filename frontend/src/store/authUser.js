@@ -27,7 +27,8 @@ const response = await axios.get("/api/v1/auth/authCheck");
 set({user:response.data.user, isCheckingAuth:false})
     }
     catch(error){
-console.log("Error")
+        set({isCheckingAuth:false, user:null})
+console.log("Error", error)
     }
 },
 }))
