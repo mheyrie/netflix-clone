@@ -20,8 +20,11 @@ signup: async(credentials)=>{
 login: async()=>{},
 logout: async()=>{},
 authCheck: async()=>{
-    try{}catch(error){
+    try{
         
+    }
+    catch(error){
+
     }
 },
 }))
