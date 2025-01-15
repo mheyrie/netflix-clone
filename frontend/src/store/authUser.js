@@ -21,7 +21,7 @@ signup: async(credentials)=>{
 login: async()=>{},
 logout: async()=>{},
 authCheck: async()=>{
-    set
+    set({isCheckingAuth:true})
     try{
 
     }
