@@ -21,11 +21,12 @@ signup: async(credentials)=>{
 login: async()=>{},
 logout: async()=>{},
 authCheck: async()=>{
+    set
     try{
 
     }
     catch(error){
-
+console.log("Error")
     }
 },
 }))
