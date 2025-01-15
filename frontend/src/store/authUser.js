@@ -19,5 +19,9 @@ signup: async(credentials)=>{
 },
 login: async()=>{},
 logout: async()=>{},
-authCheck: async()=>{},
+authCheck: async()=>{
+    try{}catch(error){
+        
+    }
+},
 }))
