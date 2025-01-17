@@ -8,7 +8,7 @@ import { useAuthStore } from "./store/authUser";
 
 function App() {
   const {user, isCheckingAuth} = useAuthStore();
-  console.log('auth user is here', user);
+  console.log('auth user is here:', user);
   return (
    <>
      <Routes>
