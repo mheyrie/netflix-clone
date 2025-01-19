@@ -7,7 +7,7 @@ import { useAuthStore } from "./store/authUser";
 
 
 function App() {
-  const {user, isCheckingAuth} = useAuthStore();
+  const {user, isCheckingAuth, authCheck} = useAuthStore();
   console.log('auth user is here:', user);
   return (
    <>
