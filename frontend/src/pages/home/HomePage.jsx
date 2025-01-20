@@ -1,4 +1,3 @@
-import { use } from "react";
 import AuthScreen from "./AuthScreen";
 import HomeScreen from "./HomeScreen";
 import { useAuthStore } from "../../store/authUser";
