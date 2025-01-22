@@ -13,6 +13,7 @@ function App() {
   console.log('auth user is here:', user);
 
   useEffect(() => {authCheck();}, []);
+  
   return (
    <>
      <Routes>
