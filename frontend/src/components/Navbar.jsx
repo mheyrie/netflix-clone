@@ -1,9 +1,11 @@
-import { Search } from "lucide-react";
+import { LogOut, Search } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useAuthStore } from "../store/authUser";
 
 export default function Navbar() {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const {user, logout} = useAuthStore();
 
   const toggleMobileMenu = () => {
     setIsMobileOpen(!isMobileOpen);
@@ -31,9 +33,11 @@ export default function Navbar() {
 
       <div className="flex gap-2 items-center z-50">
         <Link to="/search" className="text-white hover:underline">
-        <Search/> </Link>
+          <Search />{" "}
+        </Link>
+        <img src={user.image} alt="Avatar" className="rounded cursor-pointer h-8" />
+        <LogOut className="siz-6 cursor-pointer" onClick={logout} />
       </div>
-
 
       {/* Mobile navbar items  */}
       {isMobileOpen && (
