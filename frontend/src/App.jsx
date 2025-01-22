@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import HomePage from "./pages/home/HomePage";
 import SignupPage from "./pages/SignupPage";
 import Login from "./pages/Login";
@@ -18,8 +18,8 @@ function App() {
    <>
      <Routes>
        <Route path="/" element={<HomePage />} />
-       <Route path="/login" element={<Login />} />
-       <Route path="/signup" element={!user ? <SignupPage />: <HomePage/>} />
+       <Route path="/login" element={!user ? <Login />: <Navigate to={'/'}/>} />
+       <Route path="/signup" element={!user ? <SignupPage />: <Navigate to={'/'}/>} />
      </Routes>
     <Footer />
      <Toaster />
