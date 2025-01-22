@@ -1,4 +1,4 @@
-import { LogOut, Search } from "lucide-react";
+import { LogOut, Menu, Search } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuthStore } from "../store/authUser";
@@ -37,6 +37,9 @@ export default function Navbar() {
         </Link>
         <img src={user.image} alt="Avatar" className="rounded cursor-pointer h-8" />
         <LogOut className="siz-6 cursor-pointer" onClick={logout} />
+        <div className="sm:hidden">
+            <Menu className="cursor-pointer size-6" onClick={toggleMobileMenu} />
+        </div>
       </div>
 
       {/* Mobile navbar items  */}
