@@ -5,7 +5,7 @@ import Login from "./pages/Login";
 import { Toaster } from "react-hot-toast";
 import { useAuthStore } from "./store/authUser";
 import { useEffect } from "react";
-// import Footer from "./components/Footer";
+import Footer from "./components/Footer";
 
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
   console.log('auth user is here:', user);
 
   useEffect(() => {authCheck();}, []);
-  
+
   return (
    <>
      <Routes>
@@ -21,7 +21,7 @@ function App() {
        <Route path="/login" element={<Login />} />
        <Route path="/signup" element={<SignupPage />} />
      </Routes>
-    {/* <Footer /> */}
+    <Footer />
      <Toaster />
    </>
   );
