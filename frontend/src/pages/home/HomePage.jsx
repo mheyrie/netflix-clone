@@ -4,5 +4,5 @@ import { useAuthStore } from "../../store/authUser";
 
 export default function HomePage() {
   const {user} = useAuthStore();
-  return <div>{user ? <HomeScreen /> : <AuthScreen />}</div>;
+  return <>{user ? <HomeScreen /> : <AuthScreen />}</>;
 }
