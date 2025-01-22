@@ -3,17 +3,17 @@ import { useState } from "react";
 import { useAuthStore } from "../store/authUser";
 
 export default function SignupPage() {
-  const searchParams  = new URLSearchParams(document.location.search);
+  const searchParams = new URLSearchParams(document.location.search);
   const emailValue = searchParams.get("email");
   const [email, setEmail] = useState(emailValue || "");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const {signup}=useAuthStore();
+  const { signup } = useAuthStore();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-        signup({email, username, password});
+    signup({ email, username, password });
   };
   return (
     <div className="h-screen w-full hero-bg">
