@@ -24,7 +24,7 @@ export default function HomeScreen() {
           <h1 className="mt-4 text-6xl font-extrabold">
             Extraction
           </h1>
-          <p className=""></p>
+          <p className="mt-2 text-lg">2014 | 18+</p>
         </div>
       </div>
     </>
