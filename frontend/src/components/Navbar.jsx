@@ -11,7 +11,7 @@ export default function Navbar() {
     setIsMobileOpen(!isMobileOpen);
   };
   return (
-    <header className="h-20 max-w-6xl max-auto flex flex-wrap items-center justify-between p-4">
+    <header className="h-20 max-w-6xl mx-auto flex flex-wrap items-center justify-between p-4">
       <div className="flex items-center gap-10 z-50">
         <Link to="/" className="text-2xl font-bold text-white">
           <img src="/netflix-logo.png" alt="Logo" className="w-32 sm:w-40" />
