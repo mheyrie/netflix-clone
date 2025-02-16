@@ -1,4 +1,5 @@
 export default function Footer() {
+  const currentYear = new Date().getFullYear()
   return (
     <footer className="w-full bg-black text-white py-10 px-6 md:px-20">
       <div className="max-w-6xl mx-auto">
@@ -36,7 +37,7 @@ export default function Footer() {
 
         {/* Copyright Section */}
         <div className="text-center mt-8">
-          <p className="text-sm text-muted-foreground">©  Netflix, Inc.</p>
+          <p className="text-sm text-muted-foreground">© {currentYear} Netflix, Inc.</p>
         </div>
       </div>
     </footer>
