@@ -12,8 +12,8 @@ export default function Navbar() {
     setIsMobileOpen(!isMobileOpen);
   };
 
-  const {contentType, setContentType}=useContentStore()
-  console.log('contentType:',contentType)
+  const { setContentType}=useContentStore()
+  
   return (
     <header className="h-20 max-w-6xl mx-auto flex flex-wrap items-center justify-between p-4">
       <div className="flex items-center gap-10 z-50">
