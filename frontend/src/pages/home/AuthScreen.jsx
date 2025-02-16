@@ -137,7 +137,7 @@ export default function AuthScreen() {
                 alt="Strange thing"
                 className="mt-4"
               />
-              <div className="flex items-center gap-2 absolute bottom-5 left-1/2 -translate-x-1/2 bg-black w-3/4 lg:w-1/2 h-24 border border-slate-500 rounded-md px-2">
+              <div className="flex items-center gap-2 absolute bottom-5 left-1/2 -translate-x-1/2 bg-black w-3/4 lg:w-1/2 h-24 border border-slate-500 rounded-md px-2 cursor-pointer">
                 <img
                   src="/stranger-things-sm.png"
                   alt="image"
