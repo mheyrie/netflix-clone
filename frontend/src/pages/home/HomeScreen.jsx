@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 import Navbar from "../../components/Navbar";
 import { Info, Play } from "lucide-react";
+import useGetTrending from "../../hooks/useGetTrending";
 
 export default function HomeScreen() {
+  const { trendingContent } = useGetTrending();
+  console.log("Trending content:",trendingContent);
   return (
     <>
       <div className=" h-screen text-white relative">
@@ -46,7 +49,7 @@ export default function HomeScreen() {
               className="bg-gray-500/70 hover:bg-gray-500 text-white py-2 px-4 rounded flex items-center ml-4"
             >
               <Info className="size-6 mr-2 " />
-             More Info
+              More Info
             </Link>
           </div>
         </div>
@@ -54,7 +57,3 @@ export default function HomeScreen() {
     </>
   );
 }
-
-
-
-

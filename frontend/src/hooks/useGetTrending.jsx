@@ -1,8 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useContentStore } from "../store/content";
-import { useEffect } from "react";
 import axios from "axios";
-import { response } from "express";
 
 const useGetTrending = () => {
   const [trendingContent, setTrendingContent] = useState(null);
@@ -10,11 +8,11 @@ const useGetTrending = () => {
 
   useEffect(() => {
     const getTrendingContent = async () => {
-      await axios.get(`/api/v1/${contentType}/trending`);
+      const response = await axios.get(`/api/v1/${contentType}/trending`);
       setTrendingContent(response.data.content);
-      
-    };getTrendingContent()
+    };
+    getTrendingContent();
   }, [contentType]);
-  return {trendingContent}
+  return { trendingContent };
 };
 export default useGetTrending;
