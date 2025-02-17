@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Navbar from "../../components/Navbar";
 import { Info, Play } from "lucide-react";
 import useGetTrending from "../../hooks/useGetTrending";
+import { ORIGINAL_IMG_BASE_URL } from "../../utils/constant";
 
 export default function HomeScreen() {
   const { trendingContent } = useGetTrending();
@@ -12,7 +13,7 @@ export default function HomeScreen() {
         <Navbar />
 
         <img
-          src="/extraction.jpg"
+          src={ORIGINAL_IMG_BASE_URL + trendingContent?.backdrop_path}
           alt="hero-img"
           className="absolute left-0 top-0 w-full h-full object-cover -z-50"
         />
@@ -26,9 +27,9 @@ export default function HomeScreen() {
 
           <div className="max-w-2xl">
             <h1 className="mt-4 text-6xl font-extrabold text-balance">
-              Extraction
+              {trendingContent?.title || trendingContent?.name}
             </h1>
-            <p className="mt-2 text-lg">2014 | 18+</p>
+            <p className="mt-2 text-lg">{trendingContent?.release_date?.split("-")[0] || trendingContent?.first_air_date.split('-')[0]}{""} | 18+</p>
             <p className="mt-4 text-lg">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus
               dolores doloremque nobis excepturi voluptate quo nam alias
