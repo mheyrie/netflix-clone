@@ -131,7 +131,7 @@
   margin: -2rem auto 0 auto;
   display: flex;
   flex-direction: column;
-   width: 100%;
+  width: 100%;
   max-width: 120rem;
   justify-content: center;
   padding: 0 2rem 2rem 2rem;
@@ -179,6 +179,13 @@
     rgba(184, 40, 105, 1),
     rgba(33, 13, 22, 1) 84%
   );
+}
+
+/* Loading state */
+.shimmer{
+  animation: shimmer 2s infinite linear;
+  background: linear-gradient(to right, #f0f0f0 4%, #e0e0e0 25%, #f0f0f0 36%);
+  background-size: 1000px 100%;
 }
 
 /* media queries  */

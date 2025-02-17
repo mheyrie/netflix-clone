@@ -6,7 +6,16 @@ import { ORIGINAL_IMG_BASE_URL } from "../../utils/constant";
 
 export default function HomeScreen() {
   const { trendingContent } = useGetTrending();
-  
+  console.log("trending content is here:", trendingContent);
+
+  if (!trendingContent)
+    return (
+      <div className="h-screen text-white relative">
+        <Navbar /> 
+        <div className="absolute top-0 left-0 w-full h-full bg-black/70 flex items-center justify-center -z-10 shimmer"></div>
+      </div>
+    );
+
   return (
     <>
       <div className=" h-screen text-white relative">
@@ -29,24 +38,27 @@ export default function HomeScreen() {
             <h1 className="mt-4 text-6xl font-extrabold text-balance">
               {trendingContent?.title || trendingContent?.name}
             </h1>
-            <p className="mt-2 text-lg">{trendingContent?.release_date?.split("-")[0] || trendingContent?.first_air_date.split('-')[0]}{""} | 18+</p>
+            <p className="mt-2 text-lg">
+              {trendingContent?.release_date?.split("-")[0] ||
+                trendingContent?.first_air_date.split("-")[0]}
+              {""} | {trendingContent?.adult ? "18+" : "PG-13"}
+            </p>
             <p className="mt-4 text-lg">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus
-              dolores doloremque nobis excepturi voluptate quo nam alias
-              consectetur dicta, ad sapiente soluta, provident nulla eaque
-              voluptas totam earum tempore mollitia!
+              {trendingContent?.overview > 200
+                ? trendingContent?.overview.slice(0, 200) + "..."
+                : trendingContent?.overview}
             </p>
           </div>
           <div className="flex mt-8">
             <Link
-              to="/watch/123"
+              to={`/watch/${trendingContent?.id}`}
               className="bg-white hover:bg-white/80 text-black font-bold py-2 px-4 rounded pr-4 flex items-center"
             >
               <Play className="size-6 mr-2 fill-black" />
               Play
             </Link>
             <Link
-              to="/watch/123"
+              to={`/watch/${trendingContent?.id}`}
               className="bg-gray-500/70 hover:bg-gray-500 text-white py-2 px-4 rounded flex items-center ml-4"
             >
               <Info className="size-6 mr-2 " />
