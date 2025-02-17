@@ -3,7 +3,8 @@ import Navbar from "../../components/Navbar";
 import { Info, Play } from "lucide-react";
 import useGetTrending from "../../hooks/useGetTrending";
 import { ORIGINAL_IMG_BASE_URL } from "../../utils/constant";
-import { useContentStore } from "../../store/content";
+import { MOVIE_CATEGORIES, TV_CATEGORIES, useContentStore } from "../../store/content";
+import { MovieSlider } from "../../components/MovieSlider";
 
 export default function HomeScreen() {
   const { contentType } = useContentStore();
@@ -70,7 +71,15 @@ export default function HomeScreen() {
         </div>
       </div>
       <div className="flex flex-col gap-10 bg-black py-10">
-        {contentType === "movie"? ():()}
+        {contentType === "movie"? (
+          MOVIE_CATEGORIES.map((category) => (
+            <MovieSlider key={category} category={category} />
+          ))
+        ):( 
+          TV_CATEGORIES.map((category) => (
+            <MovieSlider key={category} category={category} />
+          ))
+        )}
       </div>
     </>
   );
