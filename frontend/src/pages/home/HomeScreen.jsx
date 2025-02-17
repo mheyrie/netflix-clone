@@ -5,7 +5,7 @@ import useGetTrending from "../../hooks/useGetTrending";
 
 export default function HomeScreen() {
   const { trendingContent } = useGetTrending();
-  console.log("Trending content:",trendingContent);
+  
   return (
     <>
       <div className=" h-screen text-white relative">
