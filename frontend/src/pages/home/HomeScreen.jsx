@@ -3,15 +3,17 @@ import Navbar from "../../components/Navbar";
 import { Info, Play } from "lucide-react";
 import useGetTrending from "../../hooks/useGetTrending";
 import { ORIGINAL_IMG_BASE_URL } from "../../utils/constant";
+import { useContentStore } from "../../store/content";
 
 export default function HomeScreen() {
+  const { contentType } = useContentStore();
   const { trendingContent } = useGetTrending();
   console.log("trending content is here:", trendingContent);
 
   if (!trendingContent)
     return (
       <div className="h-screen text-white relative">
-        <Navbar /> 
+        <Navbar />
         <div className="absolute top-0 left-0 w-full h-full bg-black/70 flex items-center justify-center -z-10 shimmer"></div>
       </div>
     );
@@ -66,6 +68,9 @@ export default function HomeScreen() {
             </Link>
           </div>
         </div>
+      </div>
+      <div className="flex flex-col gap-10 bg-black py-10">
+        {contentType === "movie"? ():()}
       </div>
     </>
   );
