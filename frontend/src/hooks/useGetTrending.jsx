@@ -8,9 +8,9 @@ const useGetTrending = () => {
 
   useEffect(() => {
     const getTrendingContent = async () => {
-      const response = await axios.get(`/api/v1/${contentType}/trending`);
-      setTrendingContent(response.data.content);
-    };
+      const res = await axios.get(`/api/v1/${contentType}/trending`);
+      setTrendingContent(res.data.content);
+    }
     getTrendingContent();
   }, [contentType]);
   return { trendingContent };
