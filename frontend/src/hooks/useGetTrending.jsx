@@ -19,18 +19,3 @@ export default useGetTrending;
 
 
 
-
-//https://api-apps.vfdbank.systems/vfd-tech/baas-portal/v1.1/baasauth/token
-// {
-//   "consumerKey": "XfFfOuOoNUw5sUMfEQjrwyPnYF9b",
-//   "consumerSecret": "Foc8alK8xoxiugVkYXZn86XpCrIQ",
-//   "validityTime": "-1"
-//  }
-
-// https://api-apps.vfdbank.systems/vtech-wallet/api/v1/wallet2/corporateclient/create
-// {
-//   "rcNumber":"2886665",
-//   "companyName":"Maikudi recycling hubs",
-//   "incorporationDate":"15 May 2019",
-//   "bvn":"22158642541"
-// }
