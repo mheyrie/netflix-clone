@@ -29,7 +29,7 @@ export default function Navbar() {
           <Link to="/" className="hover:underline" onClick={()=>setContentType('tv')}>
             TV Shows
           </Link>
-          <Link to="/" className="hover:underline" >
+          <Link to="/history" className="hover:underline" >
             Search History
           </Link>
         </div>
@@ -64,7 +64,7 @@ export default function Navbar() {
             TV Shows
           </Link>
           <Link
-            to={"/"}
+            to={"/history"}
             className="block text-white p-2"
             onClick={toggleMobileMenu}
           >
