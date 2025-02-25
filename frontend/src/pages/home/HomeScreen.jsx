@@ -25,11 +25,12 @@ export default function HomeScreen() {
     <>
       <div className=" h-screen text-white relative">
         <Navbar />
-
+{imgLoading && <div className="absolute top-0 left-0 w-full h-full bg-black/70 flex items-center justify-center -z-10 shimmer"/>}
         <img
           src={ORIGINAL_IMG_BASE_URL + trendingContent?.backdrop_path}
           alt="hero-img"
           className="absolute left-0 top-0 w-full h-full object-cover -z-50"
+        onLoad={()=>setImgLoading(false)}
         />
         <div
           className="absolute left-0 top-0 w-full h-full bg-black/50 -z-50"

@@ -35,7 +35,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      <div className="flex gap-2 items-center z-50">
+      <div className="flex gap-2 md:gap-6 items-center z-50">
         <Link to="/search" className="text-white hover:underline">
           <Search />{" "}
         </Link>
