@@ -9,6 +9,7 @@ import { SMALL_IMG_BASE_URL } from "../utils/constant";
 export const MovieSlider = ({ category }) => {
   const { contentType } = useContentStore();
   const [content, setContent] = useState([]);
+  const[showArrows, setShowArrows] = useState(false);
 
   console.log("category is here:", category);
 
@@ -23,8 +24,11 @@ export const MovieSlider = ({ category }) => {
   getContent()
  }, [category, contentType]);
   return (
-    <div className="text-white bg-black relative px-5 md:px-20">
-      <h2 className="">
+    <div className="text-white bg-black relative px-5 md:px-20"
+    onMouseEnter={()=>setShowArrows(true)}
+    onMouseLeave={()=>setShowArrows(false)}
+    >
+      <h2 className="text-2xl font-bold mb-2">
         {formattedCategoryName} {formattedContentType}
       </h2>
       <div className="flex space-x-4 overflow-x-scroll">
