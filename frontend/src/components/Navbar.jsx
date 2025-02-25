@@ -1,4 +1,4 @@
-import { LogOut, Menu, Search } from "lucide-react";
+import { LogOut, Menu, Search, X } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuthStore } from "../store/authUser";
@@ -6,14 +6,14 @@ import { useContentStore } from "../store/content";
 
 export default function Navbar() {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
-  const {user, logout} = useAuthStore();
+  const { user, logout } = useAuthStore();
 
   const toggleMobileMenu = () => {
     setIsMobileOpen(!isMobileOpen);
   };
 
-  const { setContentType}=useContentStore()
-  
+  const { setContentType } = useContentStore();
+
   return (
     <header className="h-20 max-w-6xl mx-auto flex flex-wrap items-center justify-between p-4">
       <div className="flex items-center gap-10 z-50">
@@ -23,13 +23,21 @@ export default function Navbar() {
 
         {/* Desktop Navbar Item  */}
         <div className="hidden sm:flex gap-2 items-center">
-          <Link to="/" className="hover:underline" onClick={()=>setContentType('movie')}>
+          <Link
+            to="/"
+            className="hover:underline"
+            onClick={() => setContentType("movie")}
+          >
             Movies
           </Link>
-          <Link to="/" className="hover:underline" onClick={()=>setContentType('tv')}>
+          <Link
+            to="/"
+            className="hover:underline"
+            onClick={() => setContentType("tv")}
+          >
             TV Shows
           </Link>
-          <Link to="/history" className="hover:underline" >
+          <Link to="/history" className="hover:underline">
             Search History
           </Link>
         </div>
@@ -39,10 +47,16 @@ export default function Navbar() {
         <Link to="/search" className="text-white hover:underline">
           <Search />{" "}
         </Link>
-        <img src={user.image} alt="Avatar" className="rounded cursor-pointer h-8" />
+        <img
+          src={user.image}
+          alt="Avatar"
+          className="rounded cursor-pointer h-8"
+        />
         <LogOut className="siz-6 cursor-pointer" onClick={logout} />
         <div className="sm:hidden">
-            <Menu className="cursor-pointer size-6" onClick={toggleMobileMenu} />
+          {isMobileOpen ? (<X size={20} onClick={toggleMobileMenu}/>
+         ):(<Menu className="cursor-pointer size-6" onClick={toggleMobileMenu} />)}
+          
         </div>
       </div>
 
