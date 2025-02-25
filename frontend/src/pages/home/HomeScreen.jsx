@@ -5,11 +5,13 @@ import useGetTrending from "../../hooks/useGetTrending";
 import { ORIGINAL_IMG_BASE_URL } from "../../utils/constant";
 import { MOVIE_CATEGORIES, TV_CATEGORIES, useContentStore } from "../../store/content";
 import { MovieSlider } from "../../components/MovieSlider";
+import { useState } from "react";
 
 export default function HomeScreen() {
   const { contentType } = useContentStore();
   const { trendingContent } = useGetTrending();
   console.log("trending content is here:", trendingContent);
+  const [imgLoading, setImgLoading] = useState(true);
 
   if (!trendingContent)
     return (

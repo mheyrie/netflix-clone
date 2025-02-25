@@ -52,7 +52,7 @@ export const MovieSlider = ({ category }) => {
       <h2 className="text-2xl font-bold mb-2">
         {formattedCategoryName} {formattedContentType}
       </h2>
-      <div className="flex space-x-4 overflow-x-scroll" ref={sliderRef}>
+      <div className="flex space-x-4 overflow-x-scroll scrollbar-hide" ref={sliderRef}>
         {content.map((item) => (
           <Link
             to={`/watch/${item.id}`}
