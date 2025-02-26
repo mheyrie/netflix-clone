@@ -54,9 +54,14 @@ export default function Navbar() {
         />
         <LogOut className="siz-6 cursor-pointer" onClick={logout} />
         <div className="sm:hidden">
-          {isMobileOpen ? (<X size={20} onClick={toggleMobileMenu}/>
-         ):(<Menu className="cursor-pointer size-6" onClick={toggleMobileMenu} />)}
-          
+          {isMobileOpen ? (
+            <X size={20} onClick={toggleMobileMenu} />
+          ) : (
+            <Menu
+              className="cursor-pointer size-6"
+              onClick={toggleMobileMenu}
+            />
+          )}
         </div>
       </div>
 
