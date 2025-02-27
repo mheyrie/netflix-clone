@@ -124,6 +124,11 @@ export default function WatchPage() {
             </div>
           )}
         </div>
+
+        {/* Moivie Details */}
+        <div className="mb-4 md:mb-0 ">
+          <h2 className="text-5xl font-bold text-balance">{content?.title || content?.name}</h2>
+        </div>
       </div>
     </div>
   );
