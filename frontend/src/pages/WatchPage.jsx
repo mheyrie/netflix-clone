@@ -194,6 +194,15 @@ const sliderRef = useRef(null);
                 </div>  
               </Link>
            ) )}
+
+            <ChevronLeft size={24} className="absolute top-1/2 -translate-y-1/2 left-2 md:left-20 flex items-center justify-center size-12 rounded-full bg-red-400 opacity-0 group-hover:opacity-75 text-white z-10 transition-all duration-300 cursor-pointer"
+            onClick={scrollLeft}/>
+         
+              
+       
+            <ChevronRight size={24}   onClick={scrollRight}
+            className="absolute top-1/2 -translate-y-1/2 right-2 md:right-20 flex items-center justify-center size-12 rounded-full bg-red-400 opacity-0 transition-all duration-300 cursor-pointer group-hover:opacity-75 text-white z-10"/>
+         
           </div>
         </div>
       )}
