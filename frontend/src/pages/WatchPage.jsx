@@ -5,7 +5,7 @@ import axios from "axios";
 import Navbar from "../components/Navbar";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import ReactPlayer from "react-player";
-import { ORIGINAL_IMG_BASE_URL } from "../utils/constant";
+import { ORIGINAL_IMG_BASE_URL, SMALL_IMG_BASE_URL } from "../utils/constant";
 
 function formatReleaseDate(date) {
   return new Date(date).toLocaleDateString("en-US", {
@@ -183,14 +183,14 @@ const sliderRef = useRef(null);
           <h3 className="text-3xl font-bold mb-4">Similar Movie/TV Shows</h3>
           <div className="flex overflow-x-scroll scrollbar-hide gap-4 pb-4 group" ref={sliderRef}>
             {similarContent.map((content) => (
-              <Link key={content.id} to={`/watch/${content.id}`}>
+              <Link key={content.id} to={`/watch/${content.id}`} className="w-52 flex-none">
                 <div className="relative group">
                   <img
-                    src={ORIGINAL_IMG_BASE_URL + content.poster_path}
-                    alt=""
-                    className="rounded-lg transition-transform duration-300 ease-in-out group-hover:scale-125"
+                    src={SMALL_IMG_BASE_URL + content.poster_path}
+                    alt="poster path"
+                    className="w-full h-auto rounded-md"
                   />
-                  <p className="mt-2 text-center">{content.title || content.name}</p>
+                  <p className="mt-2 text-center text-lg">{content.title || content.name}</p>
                 </div>  
               </Link>
            ) )}
