@@ -6,6 +6,14 @@ import Navbar from "../components/Navbar";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import ReactPlayer from "react-player";
 
+function formatReleaseDate(date){
+  return new Date(date).toLocaleDateString("en-US",{
+    day:"numeric",
+    month:"short",
+    year:"numeric"
+  });
+}
+
 export default function WatchPage() {
   const { id } = useParams();
   const [trailers, setTrailers] = useState([]);
@@ -128,6 +136,13 @@ export default function WatchPage() {
         {/* Moivie Details */}
         <div className="mb-4 md:mb-0 ">
           <h2 className="text-5xl font-bold text-balance">{content?.title || content?.name}</h2>
+       <p className="mt-2 text-lg">
+        {formatReleaseDate(content?.release_date || content?.first_air_date)} •{''} {content?.adult ? (
+          <span className="text-red-400">18+</span>
+        ):(
+          <span className="text-green-400">PG-13</span>
+        )} 
+       </p>
         </div>
       </div>
     </div>
