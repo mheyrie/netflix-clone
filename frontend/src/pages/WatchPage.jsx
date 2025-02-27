@@ -86,7 +86,7 @@ export default function WatchPage() {
             <button
               className={`bg-gray-500/70 text-white hover:bg-gray-500 py-2 px-4 rounded ${
                 currentTrailerIds === 0
-                  ? "cursor-not-allowed bg-opacity-30"
+                  ? "opacity-50 cursor-not-allowed"
                   : ""
               }`}
               disabled={currentTrailerIds === 0}
@@ -97,7 +97,7 @@ export default function WatchPage() {
             <button
               className={`bg-gray-500/70 text-white hover:bg-gray-500 py-2 px-4 rounded ${
                 currentTrailerIds === trailers.length - 1
-                  ? "cursor-not-allowed opacity-50"
+                  ? "opacity-50 cursor-not-allowed"
                   : ""
               }`}
               disabled={currentTrailerIds === trailers.length - 1}
@@ -107,6 +107,7 @@ export default function WatchPage() {
             </button>
           </div>
         )}
+        <div className="aspect-video mb-8 p-2 sm:px-10 md:px-32"></div>
       </div>
     </div>
   );
