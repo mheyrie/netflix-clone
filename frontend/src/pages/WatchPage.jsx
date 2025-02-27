@@ -4,6 +4,7 @@ import { useContentStore } from "../store/content";
 import axios from "axios";
 import Navbar from "../components/Navbar";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import ReactPlayer from "react-player";
 
 export default function WatchPage() {
   const { id } = useParams();
@@ -107,7 +108,17 @@ export default function WatchPage() {
             </button>
           </div>
         )}
-        <div className="aspect-video mb-8 p-2 sm:px-10 md:px-32"></div>
+        <div className="aspect-video mb-8 p-2 sm:px-10 md:px-32">
+          {trailers.length>0&&(
+            <ReactPlayer 
+            controls={true}
+            width={"100%"}
+            height={"70vh"}
+            className="rounded-lg mx-auto overflow-hidden"
+            url={`https://www.youtube.com/watch?v=${trailers[currentTrailerIds].key}`}
+            />
+          )}
+        </div>
       </div>
     </div>
   );
