@@ -8,6 +8,6 @@ export default function WatchPage() {
   const [currentTrailerIds, setCurrentTrailerIds] = useState(0);
   const [loading, setLoading] = useState(true);
   const [content, setContent] = useState(null);
-  const {contentType}=useContentStore()
+  const {contentType}=useContentStore() 
   return <div>WatchPage</div>;
 }
