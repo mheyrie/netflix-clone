@@ -77,8 +77,8 @@ export default function WatchPage() {
           <div className="flex justify-between items-center mb-4">
             <button
               className={`bg-gray-500/70 text-white hover:bg-gray-500 py-2 px-4 rounded${
-                currentTrailerIds === 0 ? "cursor-not-allowed opacity-50" : ""
-              }`}
+                currentTrailerIds === 0 ? "cursor-not-allowed bg-opacity-30" : ""
+              }}`}
               disabled={currentTrailerIds === 0}
             >
               <ChevronLeft size={24} />
