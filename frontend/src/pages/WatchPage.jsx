@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useContentStore } from "../store/content";
 import axios from "axios";
 import Navbar from "../components/Navbar";
@@ -181,6 +181,20 @@ const sliderRef = useRef(null);
       {similarContent.length > 0 && (
         <div className="mt-12 max-w-5xl mx-auto relative">
           <h3 className="text-3xl font-bold mb-4">Similar Movie/TV Shows</h3>
+          <div className="flex overflow-x-scroll scrollbar-hide gap-4 pb-4 group" ref={sliderRef}>
+            {similarContent.map((content) => (
+              <Link key={content.id} to={`/watch/${content.id}`}>
+                <div className="relative group">
+                  <img
+                    src={ORIGINAL_IMG_BASE_URL + content.poster_path}
+                    alt=""
+                    className="rounded-lg transition-transform duration-300 ease-in-out group-hover:scale-125"
+                  />
+                  <p className="mt-2 text-center">{content.title || content.name}</p>
+                </div>  
+              </Link>
+           ) )}
+          </div>
         </div>
       )}
       </div>
