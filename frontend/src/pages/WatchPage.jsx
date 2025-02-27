@@ -5,12 +5,13 @@ import axios from "axios";
 import Navbar from "../components/Navbar";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import ReactPlayer from "react-player";
+import { ORIGINAL_IMG_BASE_URL } from "../utils/constant";
 
-function formatReleaseDate(date){
-  return new Date(date).toLocaleDateString("en-US",{
-    day:"numeric",
-    month:"short",
-    year:"numeric"
+function formatReleaseDate(date) {
+  return new Date(date).toLocaleDateString("en-US", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
   });
 }
 
@@ -94,9 +95,7 @@ export default function WatchPage() {
           <div className="flex justify-between items-center mb-4">
             <button
               className={`bg-gray-500/70 text-white hover:bg-gray-500 py-2 px-4 rounded ${
-                currentTrailerIds === 0
-                  ? "opacity-50 cursor-not-allowed"
-                  : ""
+                currentTrailerIds === 0 ? "opacity-50 cursor-not-allowed" : ""
               }`}
               disabled={currentTrailerIds === 0}
               onClick={handlePrev}
@@ -117,33 +116,49 @@ export default function WatchPage() {
           </div>
         )}
         <div className="aspect-video mb-8 p-2 sm:px-10 md:px-32">
-          {trailers.length>0&&(
-            <ReactPlayer 
-            controls={true}
-            width={"100%"}
-            height={"70vh"}
-            className="rounded-lg mx-auto overflow-hidden"
-            url={`https://www.youtube.com/watch?v=${trailers[currentTrailerIds].key}`}
+          {trailers.length > 0 && (
+            <ReactPlayer
+              controls={true}
+              width={"100%"}
+              height={"70vh"}
+              className="rounded-lg mx-auto overflow-hidden"
+              url={`https://www.youtube.com/watch?v=${trailers[currentTrailerIds].key}`}
             />
           )}
           {trailers.length === 0 && !loading && (
-            <div className="text-center text-xl">No trailers available for {""}
-            <span className="font-bold text-red-400">{content?.title || content?.name}</span>😒🙂‍↔️
+            <div className="text-center text-xl">
+              No trailers available for {""}
+              <span className="font-bold text-red-400">
+                {content?.title || content?.name}
+              </span>
+              😒🙂‍↔️
             </div>
           )}
         </div>
 
         {/* Moivie Details */}
         <div className="mb-4 md:mb-0 ">
-          <h2 className="text-5xl font-bold text-balance">{content?.title || content?.name}</h2>
-       <p className="mt-2 text-lg">
-        {formatReleaseDate(content?.release_date || content?.first_air_date)} •{''} {content?.adult ? (
-          <span className="text-red-400">18+</span>
-        ):(
-          <span className="text-green-400">PG-13</span>
-        )} 
-       </p>
+          <h2 className="text-5xl font-bold text-balance">
+            {content?.title || content?.name}
+          </h2>
+          <p className="mt-2 text-lg">
+            {formatReleaseDate(
+              content?.release_date || content?.first_air_date
+            )}{" "}
+            •{""}{" "}
+            {content?.adult ? (
+              <span className="text-red-400">18+</span>
+            ) : (
+              <span className="text-green-400">PG-13</span>
+            )}
+          </p>
+          <p className="mt-2 text-lg">{content?.overview}</p>
         </div>
+        <img
+          src={ORIGINAL_IMG_BASE_URL + content?.poster_path}
+          alt="poster image"
+          className="max-h-[600px] rounded-md"
+        />
       </div>
     </div>
   );
