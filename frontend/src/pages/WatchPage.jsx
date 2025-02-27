@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useContentStore } from "../store/content";
 import axios from "axios";
@@ -23,6 +23,7 @@ export default function WatchPage() {
   const [content, setContent] = useState(null);
   const [similarContent, setSimilarContent] = useState([]);
   const { contentType } = useContentStore();
+const sliderRef = useRef(null);
 
   useEffect(() => {
     const getTrailers = async () => {
@@ -86,6 +87,21 @@ export default function WatchPage() {
     }
   };
 
+  const scrollLeft = () => {
+    if (sliderRef.current) {
+      sliderRef.current.scrollBy({
+        left: -sliderRef.current.offsetWidth,
+        behavior: "smooth",
+      });
+    }
+  };
+  const scrollRight = () => {
+    sliderRef.current.scrollBy({
+      left: sliderRef.current.offsetWidth,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <div className="text-white bg-black min-h-screen">
       <div className="h-full py-8 mx-auto container px-4">
@@ -137,28 +153,36 @@ export default function WatchPage() {
         </div>
 
         {/* Moivie Details */}
-        <div className="mb-4 md:mb-0 ">
-          <h2 className="text-5xl font-bold text-balance">
-            {content?.title || content?.name}
-          </h2>
-          <p className="mt-2 text-lg">
-            {formatReleaseDate(
-              content?.release_date || content?.first_air_date
-            )}{" "}
-            •{""}{" "}
-            {content?.adult ? (
-              <span className="text-red-400">18+</span>
-            ) : (
-              <span className="text-green-400">PG-13</span>
-            )}
-          </p>
-          <p className="mt-2 text-lg">{content?.overview}</p>
+       <div className="flex flex-col items-center justify-between gap-20 max-w-6xl mx-auto md:flex-row">
+         <div className="mb-4 md:mb-0 ">
+           <h2 className="text-5xl font-bold text-balance">
+             {content?.title || content?.name}
+           </h2>
+           <p className="mt-2 text-lg">
+             {formatReleaseDate(
+               content?.release_date || content?.first_air_date
+             )}{" "}
+             •{""}{" "}
+             {content?.adult ? (
+               <span className="text-red-400">18+</span>
+             ) : (
+               <span className="text-green-400">PG-13</span>
+             )}
+           </p>
+           <p className="mt-2 text-lg">{content?.overview}</p>
+         </div>
+         <img
+           src={ORIGINAL_IMG_BASE_URL + content?.poster_path}
+           alt="poster image"
+           className="max-h-[600px] rounded-md"
+         />
+       </div>
+      {/* Similar content  */}
+      {similarContent.length > 0 && (
+        <div className="mt-12 max-w-5xl mx-auto relative">
+          <h3 className="text-3xl font-bold mb-4">Similar Movie/TV Shows</h3>
         </div>
-        <img
-          src={ORIGINAL_IMG_BASE_URL + content?.poster_path}
-          alt="poster image"
-          className="max-h-[600px] rounded-md"
-        />
+      )}
       </div>
     </div>
   );
