@@ -118,6 +118,11 @@ export default function WatchPage() {
             url={`https://www.youtube.com/watch?v=${trailers[currentTrailerIds].key}`}
             />
           )}
+          {trailers.length === 0 && !loading && (
+            <div className="text-center text-xl">No trailers available for {""}
+            <span className="font-bold text-red-400">{content?.title || content?.name}</span>😒🙂‍↔️
+            </div>
+          )}
         </div>
       </div>
     </div>
