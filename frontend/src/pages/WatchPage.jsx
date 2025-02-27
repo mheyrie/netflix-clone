@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { useContentStore } from "../store/ContentStore";
+import { useContentStore } from "../store/content";
 import axios from "axios";
 
 export default function WatchPage() {
@@ -27,6 +27,24 @@ export default function WatchPage() {
     };
     getTrailers();
   }, [id, contentType]);
+
+  useEffect(() => {
+    const getSimilarContent = async () => {
+      try {
+        const response = await axios.get(
+          `/api/v1/${contentType}/${id}/similar`
+        );
+        setSimilarContent(response.data.similar);
+      } catch (error) {
+        if (error.message.includes("404")) {
+          setSimilarContent([]);
+        }
+      }
+    };
+    getSimilarContent();
+  }, [id, contentType]);
+  console.log("Trailers", trailers);
+  console.log("Similar", similarContent);
 
   return <div>WatchPage</div>;
 }
