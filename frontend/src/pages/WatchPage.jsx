@@ -64,9 +64,17 @@ export default function WatchPage() {
     getContentDetails();
   }, [id, contentType]);
 
-  console.log("Trailers", trailers);
-  console.log("Similar", similarContent);
-  console.log("Content", content);
+  const handleNext = () => {
+    if (currentTrailerIds < trailers.length - 1) {
+      setCurrentTrailerIds(currentTrailerIds + 1);
+    }
+  };
+
+  const handlePrev = () => {
+    if (currentTrailerIds > 0) {
+      setCurrentTrailerIds(currentTrailerIds - 1);
+    }
+  };
 
   return (
     <div className="text-white bg-black min-h-screen">
@@ -76,18 +84,24 @@ export default function WatchPage() {
         {trailers.length > 0 && (
           <div className="flex justify-between items-center mb-4">
             <button
-            className={`bg-gray-500/70 text-white hover:bg-gray-500 py-2 px-4 rounded ${
-              currentTrailerIds === 0 ? "cursor-not-allowed bg-opacity-30" : ""
-            }`}
+              className={`bg-gray-500/70 text-white hover:bg-gray-500 py-2 px-4 rounded ${
+                currentTrailerIds === 0
+                  ? "cursor-not-allowed bg-opacity-30"
+                  : ""
+              }`}
               disabled={currentTrailerIds === 0}
+              onClick={handlePrev}
             >
               <ChevronLeft size={24} />
             </button>
             <button
               className={`bg-gray-500/70 text-white hover:bg-gray-500 py-2 px-4 rounded ${
-                currentTrailerIds === trailers.length-1 ? "cursor-not-allowed opacity-50" : ""
+                currentTrailerIds === trailers.length - 1
+                  ? "cursor-not-allowed opacity-50"
+                  : ""
               }`}
-              disabled={currentTrailerIds === trailers.length-1}
+              disabled={currentTrailerIds === trailers.length - 1}
+              onClick={handleNext}
             >
               <ChevronRight size={24} />
             </button>
