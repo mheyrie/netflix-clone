@@ -109,6 +109,15 @@ const sliderRef = useRef(null);
     </div>
   )
 
+  if(!content) return (
+    <div className="min-h-screen bg-black text-white">
+      <Navbar />
+      <div className="text-center text-2xl mt-10">
+        No content found for the given id {id} 😒🙂
+      </div>
+    </div>
+  )
+
   return (
     <div className="text-white bg-black min-h-screen">
       <div className="h-full py-8 mx-auto container px-4">
