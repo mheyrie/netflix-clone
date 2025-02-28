@@ -189,18 +189,21 @@ const sliderRef = useRef(null);
         <div className="mt-12 max-w-5xl mx-auto relative">
           <h3 className="text-3xl font-bold mb-4">Similar Movie/TV Shows</h3>
           <div className="flex overflow-x-scroll scrollbar-hide gap-4 pb-4 group" ref={sliderRef}>
-            {similarContent.map((content) => (
-              <Link key={content.id} to={`/watch/${content.id}`} className="w-52 flex-none">
-                <div className="relative group">
-                  <img
-                    src={SMALL_IMG_BASE_URL + content.poster_path}
-                    alt="poster path"
-                    className="w-full h-auto rounded-md"
-                  />
-                  <p className="mt-2 text-center text-lg">{content.title || content.name}</p>
-                </div>  
-              </Link>
-           ) )}
+            {similarContent.map((content) => {
+              if(content.poster_path === null) return null;
+              return (
+                <Link key={content.id} to={`/watch/${content.id}`} className="w-52 flex-none">
+                  <div className="relative group">
+                    <img
+                      src={SMALL_IMG_BASE_URL + content.poster_path}
+                      alt="poster path"
+                      className="w-full h-auto rounded-md"
+                    />
+                    <p className="mt-2 text-center text-lg">{content.title || content.name}</p>
+                  </div>  
+                </Link>
+             )
+            })}
 
             <ChevronLeft size={24} className="absolute top-1/2 -translate-y-1/2 left-2 md:left-20 flex items-center justify-center size-12 rounded-full bg-red-400 opacity-0 group-hover:opacity-75 text-white z-10 transition-all duration-300 cursor-pointer"
             onClick={scrollLeft}/>
