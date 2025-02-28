@@ -184,7 +184,7 @@
 /* Loading state */
 .shimmer{
   animation: shimmer 2s infinite linear;
-  background: linear-gradient(to right, #f0f0f0 4%, #e0e0e0 25%, #f0f0f0 36%);
+  background: linear-gradient(to right, #2c2c2c 4%, #333 25%, #2c2c2c 36%);
   background-size: 1000px 100%;
 }
 @keyframes shimmer {
