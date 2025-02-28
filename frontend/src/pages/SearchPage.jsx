@@ -8,11 +8,11 @@ export default function SearchPage() {
   const [results, setResults] = useState([]);
   const { setContentType } = useContentStore();
 
-  const handleTabClick=(tab)=>{
-setActiveTab(tab);
-tab === "movie" ? setContentType("movie") : setContentType("tv");
-setResults([])	
-  }
+  const handleTabClick = (tab) => {
+    setActiveTab(tab);
+    tab === "movie" ? setContentType("movie") : setContentType("tv");
+    setResults([]);
+  };
   return (
     <div className="bg-black min-h-screen text-white">
       <Navbar />
@@ -21,25 +21,40 @@ setResults([])
           <button
             className={`py-2 px-4 rounded ${
               activeTab === "movie" ? "bg-red-500" : "bg-gray-800"
-            } hover:bg-red-700`} onClick={()=>handleTabClick("movie")}
+            } hover:bg-red-700`}
+            onClick={() => handleTabClick("movie")}
           >
             Movies
           </button>
           <button
             className={`py-2 px-4 rounded ${
               activeTab === "tv" ? "bg-red-500" : "bg-gray-800"
-            } hover:bg-red-700`} onClick={()=>handleTabClick("tv")}
+            } hover:bg-red-700`}
+            onClick={() => handleTabClick("tv")}
           >
             TV Shows
           </button>
           <button
             className={`py-2 px-4 rounded ${
               activeTab === "person" ? "bg-red-500" : "bg-gray-800"
-            } hover:bg-red-700`} onClick={()=>handleTabClick("person")}
+            } hover:bg-red-700`}
+            onClick={() => handleTabClick("person")}
           >
             Person
           </button>
         </div>
+        <form
+          action=""
+          className="flex gap-2 items-stretch mb-8 max-w-2xl mx-auto"
+        >
+          <input
+            type="text"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="w-full p-2 rounded bg-gray-800 text-white"
+            placeholder={"Search for a " + activeTab}
+          />
+        </form>
       </div>
     </div>
   );
