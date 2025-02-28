@@ -7,6 +7,12 @@ export default function SearchPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [results, setResults] = useState([]);
   const { setContentType } = useContentStore();
+
+  const handleTabClick=(tab)=>{
+setActiveTab(tab);
+tab === "movie" ? setContentType("movie") : setContentType("tv");
+setResults([])	
+  }
   return (
     <div className="bg-black min-h-screen text-white">
       <Navbar />
@@ -15,21 +21,21 @@ export default function SearchPage() {
           <button
             className={`py-2 px-4 rounded ${
               activeTab === "movie" ? "bg-red-500" : "bg-gray-800"
-            } hover:bg-red-700`} onClick={()=>setContentType("movie")}
+            } hover:bg-red-700`} onClick={()=>handleTabClick("movie")}
           >
             Movies
           </button>
           <button
             className={`py-2 px-4 rounded ${
               activeTab === "tv" ? "bg-red-500" : "bg-gray-800"
-            } hover:bg-red-700`} onClick={()=>setContentType("tv")}
+            } hover:bg-red-700`} onClick={()=>handleTabClick("tv")}
           >
             TV Shows
           </button>
           <button
             className={`py-2 px-4 rounded ${
               activeTab === "person" ? "bg-red-500" : "bg-gray-800"
-            } hover:bg-red-700`} onClick={()=>setContentType("person")}
+            } hover:bg-red-700`} onClick={()=>handleTabClick("person")}
           >
             Person
           </button>
