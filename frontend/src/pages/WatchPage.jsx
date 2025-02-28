@@ -6,6 +6,7 @@ import Navbar from "../components/Navbar";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import ReactPlayer from "react-player";
 import { ORIGINAL_IMG_BASE_URL, SMALL_IMG_BASE_URL } from "../utils/constant";
+import WatchPageSkeleton from "../components/skeloton/WatchPageSkeleton";
 
 function formatReleaseDate(date) {
   return new Date(date).toLocaleDateString("en-US", {
@@ -101,6 +102,12 @@ const sliderRef = useRef(null);
       behavior: "smooth",
     });
   };
+
+  if(loading) return (
+    <div className="min-h-screen bg-black p-10">
+      <WatchPageSkeleton />
+    </div>
+  )
 
   return (
     <div className="text-white bg-black min-h-screen">
