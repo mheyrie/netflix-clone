@@ -34,7 +34,6 @@ export default function SearchPage() {
       }
     }
   };
-  console.log("Resultss", results);
 
   return (
     <div className="bg-black min-h-screen text-white">
