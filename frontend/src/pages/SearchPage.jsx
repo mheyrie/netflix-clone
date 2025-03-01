@@ -96,7 +96,7 @@ export default function SearchPage() {
                     <h3 className="text-xl mt-2 font-bold">{result.name}</h3>
                   </div>
                 ) : (
-                  <Link to={"/watch/" + result.id} className="">
+                  <Link to={"/watch/" + result.id} onClick={() => setContentType(activeTab)}>
                     <img
                       src={ORIGINAL_IMG_BASE_URL + result.poster_path}
                       alt={result.title || result.name}
