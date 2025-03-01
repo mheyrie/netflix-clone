@@ -4,6 +4,23 @@ import { useState } from "react";
 import Navbar from "../components/Navbar";
 import { SMALL_IMG_BASE_URL } from "../utils/constant";
 
+// Function to format date
+const formatDate = (dateString) => {
+  const date = new Date(dateString);
+  const monthNames = [
+    "January", "February", "March",
+    "April", "May", "June", "July",
+    "August", "September", "October",
+    "November", "December",
+  ];
+  const month = monthNames[date.getUTCMonth()];
+  const day = date.getUTCDate();
+  const year = date.getUTCFullYear();
+
+  return `${month} ${day}, ${year}`;
+};
+
+
 export default function SearchHistoryPage() {
   const [searchHistory, setSearchHistory] = useState([]);
   useEffect(() => {
@@ -39,16 +56,18 @@ export default function SearchHistoryPage() {
         <h1 className="text-2xl font-bold mb-8">Search History</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {searchHistory.map((entry) => (
-            <div key={entry.id} className="bg-gray-800 p-4 rounded flex items-start">
+            <div
+              key={entry.id}
+              className="bg-gray-800 p-4 rounded flex items-start"
+            >
               <img
                 src={SMALL_IMG_BASE_URL + entry.image}
                 alt="History Image"
-                className="w-24 h-36 object-cover rounded"
+                className="size-16 object-cover rounded-full mr-4"
               />
               <div className="ml-4">
-                <h2 className="text-lg font-bold">{entry.title}</h2>
-                <p className="text-sm">{entry.year}</p>
-                <p className="text-sm">{entry.type}</p>
+                <span className="text-lg font-bold">{entry.title}</span>
+                <span className="text-sm">{formatDate(entry.createdAt)}</span>
               </div>
             </div>
           ))}
