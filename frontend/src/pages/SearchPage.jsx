@@ -4,10 +4,12 @@ import Navbar from "../components/Navbar";
 import { Search } from "lucide-react";
 import toast from "react-hot-toast";
 import axios from "axios";
+import { Link } from "react-router-dom";
+import { ORIGINAL_IMG_BASE_URL } from "../utils/constant";
 
 export default function SearchPage() {
   const [activeTab, setActiveTab] = useState("movie");
-  const [searchQuery, setSearchQuery] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
   const [results, setResults] = useState([]);
   const { setContentType } = useContentStore();
 
@@ -20,10 +22,10 @@ export default function SearchPage() {
   const handleSearch = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.get(`/api/v1/search/${activeTab}/${searchQuery}`);
+      const res = await axios.get(`/api/v1/search/${activeTab}/${searchTerm}`);
       setResults(res.data.content);
     } catch (error) {
-      if (error.response.status === 400) {
+      if (error.response.status === 404) {
         toast.error(
           "Nothing found, make sure you are searching under the right category"
         );
@@ -32,7 +34,7 @@ export default function SearchPage() {
       }
     }
   };
-console.log("Results", results);
+  console.log("Resultss", results);
 
   return (
     <div className="bg-black min-h-screen text-white">
@@ -71,8 +73,8 @@ console.log("Results", results);
         >
           <input
             type="text"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
             className="w-full p-2 rounded bg-gray-800 text-white"
             placeholder={"Search for a " + activeTab}
           />
@@ -80,7 +82,36 @@ console.log("Results", results);
             <Search size={24} />
           </button>
         </form>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"></div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {results.map((result) => {
+            if (!result.poster_path && !result.profile_path) return null;
+            return (
+              <div key={result.id} className="bg-gray-800 p-4 rounded">
+                {activeTab === "person" ? (
+                  <Link
+                    to={"/actor/" + result.name}
+                    className="flex flex-col items-center"
+                  >
+                    <img
+                      src={ORIGINAL_IMG_BASE_URL + result.profile_path}
+                      alt={result.name}
+                      className="rounded mx-auto max-h-96"
+                    />
+                    <h3 className="text-xl mt-2 font-bold">{result.name}</h3>
+                  </Link>
+                ) : (
+                  <Link to={"/watch/" + result.id} className="">
+                    <img
+                      src={ORIGINAL_IMG_BASE_URL + result.profile_path}
+                      alt={result.title || result.name}
+                      className="rounded"
+                    />
+                  </Link>
+                )}
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
