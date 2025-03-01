@@ -8,10 +8,10 @@ export default function SearchHistoryPage() {
   useEffect(() => {
      const getSearchHistory = async () => {
       try{
-const res = await axios.get(`/api/v1/search-history`);
-setSearchHistory(res.data.history); 
+const res = await axios.get(`/api/v1/search/history`);
+setSearchHistory(res.data.content); 
       }catch(error){
-        console.log(error);
+        console.log(error.message);
         setSearchHistory([]);
       }};
       getSearchHistory();
