@@ -3,6 +3,8 @@ import { useEffect } from "react";
 import { useState } from "react";
 import Navbar from "../components/Navbar";
 import { SMALL_IMG_BASE_URL } from "../utils/constant";
+import { Trash } from "lucide-react";
+import toast from "react-hot-toast";
 
 // Function to format date
 const formatDate = (dateString) => {
@@ -43,9 +45,19 @@ export default function SearchHistoryPage() {
     getSearchHistory();
   }, []);
 
+  const handleDelete = async (entry) => {
+    try {
+      await axios.delete(`/api/v1/search/history/${entry.id}`);
+      setSearchHistory(searchHistory.filter((item) => item.id !== entry.id));
+    } catch (error) {
+      toast.error("Failed to delete search history");
+      console.log(error.message);
+  }}
+  ;
+
   if (searchHistory?.length === 0) {
     return (
-      <div className="min-h-screen text-white bg-black/20">
+      <div className="min-h-screen text-white bg-black">
         <Navbar />
         <div className="max-w-6xl mx-auto px-4 py-8">
           <h1 className="text-2xl font-bold mb-8">Search History</h1>
@@ -86,13 +98,13 @@ export default function SearchHistoryPage() {
                     : "bg-green-600"
                 }`}
               >
-                {entry.searchType}
+                {entry.searchType[0].toUpperCase() + entry.searchType.slice(1)} 
               </span>
+              <Trash className="size-5 ml-4 cursor-pointer hover:fill-red-600 hover:text-red-600" onClick={()=> handleDelete(entry)}/>
             </div>
           ))}
         </div>
       </div>
-      ;
-    </div>
+       </div>
   );
 }
