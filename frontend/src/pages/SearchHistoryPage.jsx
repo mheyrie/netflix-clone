@@ -43,7 +43,7 @@ export default function SearchHistoryPage() {
     getSearchHistory();
   }, []);
 
-  if (searchHistory.length === 0) {
+  if (searchHistory?.length === 0) {
     return (
       <div className="min-h-screen text-white bg-black/20">
         <Navbar />
@@ -62,7 +62,7 @@ export default function SearchHistoryPage() {
       <div className="max-w-6xl mx-auto px-4 py-8">
         <h1 className="text-2xl font-bold mb-8">Search History</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {searchHistory.map((entry) => (
+          {searchHistory?.map((entry) => (
             <div
               key={entry.id}
               className="bg-gray-800 p-4 rounded flex items-start"
@@ -79,7 +79,7 @@ export default function SearchHistoryPage() {
               <span
                 className={`py-1 min-w-20 text-center rounded-full text-sm ml-auto ${
                   entry.searchType === "Movie"
-                    ? "bg-red-400"
+                    ? "bg-red-600"
                     : entry.searchType === "Tv Show"
                     ? "bg-blue-600"
                     : "bg-green-600"
