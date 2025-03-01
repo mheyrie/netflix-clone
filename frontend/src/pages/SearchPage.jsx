@@ -88,17 +88,14 @@ export default function SearchPage() {
             return (
               <div key={result.id} className="bg-gray-800 p-4 rounded">
                 {activeTab === "person" ? (
-                  <Link
-                    to={"/actor/" + result.name}
-                    className="flex flex-col items-center"
-                  >
+                  <div className="flex flex-col items-center">
                     <img
                       src={ORIGINAL_IMG_BASE_URL + result.profile_path}
                       alt={result.name}
                       className="rounded mx-auto max-h-96"
                     />
                     <h3 className="text-xl mt-2 font-bold">{result.name}</h3>
-                  </Link>
+                  </div>
                 ) : (
                   <Link to={"/watch/" + result.id} className="">
                     <img
