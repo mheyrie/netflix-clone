@@ -8,10 +8,18 @@ import { SMALL_IMG_BASE_URL } from "../utils/constant";
 const formatDate = (dateString) => {
   const date = new Date(dateString);
   const monthNames = [
-    "January", "February", "March",
-    "April", "May", "June", "July",
-    "August", "September", "October",
-    "November", "December",
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
   ];
   const month = monthNames[date.getUTCMonth()];
   const day = date.getUTCDate();
@@ -19,7 +27,6 @@ const formatDate = (dateString) => {
 
   return `${month} ${day}, ${year}`;
 };
-
 
 export default function SearchHistoryPage() {
   const [searchHistory, setSearchHistory] = useState([]);
@@ -65,10 +72,21 @@ export default function SearchHistoryPage() {
                 alt="History Image"
                 className="size-16 object-cover rounded-full mr-4"
               />
-              <div className="ml-4">
+              <div className="ml-4 flex flex-col">
                 <span className="text-lg font-bold">{entry.title}</span>
                 <span className="text-sm">{formatDate(entry.createdAt)}</span>
               </div>
+              <span
+                className={`py-1 min-w-20 text-center rounded-full text-sm ml-auto ${
+                  entry.searchType === "Movie"
+                    ? "bg-red-400"
+                    : entry.searchType === "Tv Show"
+                    ? "bg-blue-600"
+                    : "bg-green-600"
+                }`}
+              >
+                {entry.searchType}
+              </span>
             </div>
           ))}
         </div>
