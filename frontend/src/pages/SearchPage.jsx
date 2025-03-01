@@ -19,18 +19,21 @@ export default function SearchPage() {
 
   const handleSearch = async (e) => {
     e.preventDefault();
-    try{
-        const res = await axios.get(`/api/v1/search/${activeTab}/${searchQuery}`)
-        setResults(res.data.content)
-    }catch (error){
-        if(error.response.status === 400){
-          toast.error("Nothing found, make sure you are searching under the right category")  
-        }else{
-            toast.error('An error occurred, please try again later')
-        }
-        
+    try {
+      const res = await axios.get(`/api/v1/search/${activeTab}/${searchQuery}`);
+      setResults(res.data.content);
+    } catch (error) {
+      if (error.response.status === 400) {
+        toast.error(
+          "Nothing found, make sure you are searching under the right category"
+        );
+      } else {
+        toast.error("An error occurred, please try again later");
+      }
     }
   };
+console.log("Results", results);
+
   return (
     <div className="bg-black min-h-screen text-white">
       <Navbar />
@@ -77,6 +80,7 @@ export default function SearchPage() {
             <Search size={24} />
           </button>
         </form>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"></div>
       </div>
     </div>
   );
