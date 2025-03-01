@@ -56,6 +56,7 @@ export default function SearchHistoryPage() {
       </div>
     );
   }
+
   return (
     <div className="bg-black text-white min-h-screen">
       <Navbar />
@@ -78,9 +79,9 @@ export default function SearchHistoryPage() {
               </div>
               <span
                 className={`py-1 min-w-20 text-center rounded-full text-sm ml-auto ${
-                  entry.searchType === "Movie"
+                  entry.searchType === "movie"
                     ? "bg-red-600"
-                    : entry.searchType === "Tv Show"
+                    : entry.searchType === "tv"
                     ? "bg-blue-600"
                     : "bg-green-600"
                 }`}
