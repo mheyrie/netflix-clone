@@ -98,7 +98,7 @@ export default function SearchPage() {
                 ) : (
                   <Link to={"/watch/" + result.id} className="">
                     <img
-                      src={ORIGINAL_IMG_BASE_URL + result.profile_path}
+                      src={ORIGINAL_IMG_BASE_URL + result.poster_path}
                       alt={result.title || result.name}
                       className="rounded"
                     />
