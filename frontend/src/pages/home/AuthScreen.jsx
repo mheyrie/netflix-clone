@@ -3,6 +3,7 @@ import TextAnimation from "../../utils/TextAnimation";
 import { useState } from "react";
 import { ChevronRight } from "lucide-react";
 import Footer from "../../components/Footer";
+import TrendingCard from "../../components/TrendingCard";
 
 export default function AuthScreen() {
   const [email, setEmail] = useState("");
@@ -121,6 +122,17 @@ export default function AuthScreen() {
             >
               <source src="/hero-vid.m4v" type="video/mp4" />
             </video>
+          </div>
+        </div>
+      </div>
+      {/* separator  */}
+      <div className="h-2 w-full bg-[#232323]" aria-hidden="true" />
+      {/* Trending Card  */}
+      <div className="py-10 bg-black ">
+        <div className="flex max-w-6xl mx-auto items-center justify-center md:flex-row flex-col px-4 md:px-2">
+          <div className="flex-1 text-center md:text-left">
+            <h2 className="text-4xl md:text-5xl font-extrabold mb-4">Trending Now</h2>
+            <TrendingCard/>
           </div>
         </div>
       </div>
