@@ -27,8 +27,8 @@ export default function TrendingCard() {
   if (movies.length === 0) return <p className="text-white">Loading...</p>;
 
   return (
-    <div className="w-full px-6 py-10">
-      <h2 className="text-white text-2xl font-bold mb-4">Trending Now</h2>
+    <div className="w-full py-10">
+      
       <Swiper
         modules={[Navigation, Pagination]}
         spaceBetween={10}
@@ -42,12 +42,15 @@ export default function TrendingCard() {
       >
         {movies.map((movie, index) => (
           <SwiperSlide key={movie.id} className="group relative cursor-pointer">
-                 <div className="relative">
-              <span className="absolute bottom-0 left-[-10px]
-               text-black text-9xl font-bold px-3 py-1 rounded-full z-10 shadow-md"  style={{
-                WebkitTextStroke: "2px white", 
-                textStroke: "4px white",
-              }}>
+            <div className="relative">
+              <span
+                className="absolute bottom-0 left-[-10px]
+               text-black text-9xl font-bold px-3 py-1 rounded-full z-10 shadow-md"
+                style={{
+                  WebkitTextStroke: "2px white",
+                  textStroke: "4px white",
+                }}
+              >
                 {index + 1}
               </span>
 

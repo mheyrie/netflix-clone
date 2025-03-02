@@ -142,7 +142,8 @@
   box-sizing: border-box;
   height: 100%;
   position: absolute;
-  top: 0;
+  /* top: 0; */
+  top: 1rem;
   margin: auto;
   display: flex;
   align-items: center;
@@ -182,7 +183,7 @@
 }
 
 /* Loading state */
-.shimmer{
+.shimmer {
   animation: shimmer 2s infinite linear;
   background: linear-gradient(to right, #2c2c2c 4%, #333 25%, #2c2c2c 36%);
   background-size: 1000px 100%;
@@ -194,7 +195,6 @@
   100% {
     background-position: 1000px 0;
   }
-  
 }
 
 .error-page--content::before {
@@ -205,12 +205,14 @@
   right: 10vw;
   bottom: -10vw;
   z-index: -1;
-  background: radial-gradient( ellipse at center, rgba(0,0,0,0.5) 0, rgba(0,0,0,0.2) 45%, rgba(0,0,0,0.1) 55%, transparent 70%);
-   
-  ;
-
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 0.5) 0,
+    rgba(0, 0, 0, 0.2) 45%,
+    rgba(0, 0, 0, 0.1) 55%,
+    transparent 70%
+  );
 }
-
 
 /* media queries  */
 @media (min-width: 1280px) {

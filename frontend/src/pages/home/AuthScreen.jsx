@@ -129,12 +129,13 @@ export default function AuthScreen() {
       <div className="h-2 w-full bg-[#232323]" aria-hidden="true" />
       {/* Trending Card  */}
       <div className="py-10 bg-black ">
-       
-            <h2 className="text-4xl md:text-5xl font-extrabold mb-4">Trending Now</h2>
-            <TrendingCard/>
-          
-          
+   
+        <h2 className="text-4xl text-start font-extrabold mb-4 max-w-6xl mx-auto text-white ">
+          Trending Now
+        </h2>
+        <TrendingCard />
       </div>
+    
       {/* separator  */}
       <div className="h-2 w-full bg-[#232323]" aria-hidden="true" />
 
