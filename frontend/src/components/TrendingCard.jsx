@@ -41,7 +41,7 @@ export default function TrendingCard() {
         navigation
       >
         {movies.map((movie, index) => (
-          <SwiperSlide key={movie.id} className="group relative cursor-pointer">
+          <SwiperSlide key={movie.id} className="group relative">
             <div className="relative">
               <span
                 className="absolute bottom-0 left-[-10px]
