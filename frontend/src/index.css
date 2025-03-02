@@ -142,8 +142,8 @@
   box-sizing: border-box;
   height: 100%;
   position: absolute;
-  /* top: 0; */
-  top: 1rem;
+  top: 0;
+  /* top: 1rem; */
   margin: auto;
   display: flex;
   align-items: center;
@@ -160,6 +160,7 @@
   background-clip: padding-box;
   width: 200%;
   left: -50%;
+  overflow: hidden;
 }
 
 .curve-one::before {
@@ -180,6 +181,19 @@
     rgba(184, 40, 105, 1),
     rgba(33, 13, 22, 1) 84%
   );
+}
+
+
+/* Scroll bar  */
+::-webkit-scrollbar {
+  width:8px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #6b7280;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #1f2937;
 }
 
 /* Loading state */
