@@ -31,7 +31,7 @@ export default function TrendingCard() {
       
       <Swiper
         modules={[Navigation, Pagination]}
-        spaceBetween={10}
+        spaceBetween={20}
         slidesPerView={3}
         breakpoints={{
           480: { slidesPerView: 4 },
@@ -41,7 +41,7 @@ export default function TrendingCard() {
         navigation
       >
         {movies.map((movie, index) => (
-          <SwiperSlide key={movie.id} className="group relative">
+          <SwiperSlide key={movie.id} className="group relative cursor-default">
             <div className="relative">
               <span
                 className="absolute bottom-0 left-[-10px]

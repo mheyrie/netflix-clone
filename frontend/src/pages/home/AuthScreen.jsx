@@ -131,7 +131,7 @@ export default function AuthScreen() {
       <div className="py-10 bg-black ">
    
         <h2 className="text-4xl text-start font-extrabold mb-4 max-w-6xl mx-auto text-white ">
-          Trending Now
+          Trending Now.....
         </h2>
         <TrendingCard />
       </div>
