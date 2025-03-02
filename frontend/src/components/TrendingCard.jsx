@@ -24,7 +24,7 @@ export default function TrendingCard() {
     fetchMovies();
   }, []);
 
-  if (movies.length === 0) return <p className="text-white">Loading...</p>;
+  if (movies.length === 0) return <p className="text-white">Loading..</p>;
 
   return (
     <div className="w-full py-10">
