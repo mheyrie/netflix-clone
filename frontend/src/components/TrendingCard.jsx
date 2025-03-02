@@ -6,34 +6,25 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import axios from "axios";
 
-
 export default function TrendingCard() {
   const [movies, setMovies] = useState([]);
+  const API_KEY = import.meta.env.VITE_API_KEY;
+  
+
+  const getMovie = () => {
+    fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}`)
+      .then((res) => res.json())
+      .then((res) => setMovies(res.results));
+  };
 
   useEffect(() => {
-    const fetchTrendingMovies = async () => {
-      try {
-        const response = await axios.get("https://api.themoviedb.org/3/trending/movie/day", {
-          params: { language: "en-US" },
-          headers: {
-            accept: "application/json",
-            Authorization: `Bearer ${import.meta.env.VITE_TMDB_API_KEY}`, 
-          },
-        });
-        setMovies(response.data.results.slice(0, 10)); // ✅ Restrict to 10 movies
-      } catch (error) {
-        console.error("Error fetching trending movies:", error);
-      }
-    };
-
-    fetchTrendingMovies(); // ✅ Corrected: No console.log(fetchTrendingMovies())
+    getMovie();
   }, []);
 
-  if (movies.length === 0) return <p className="text-white">Loading...</p>; // ✅ Better UX for empty state
+  if (movies.length === 0) return <p className="text-white">Loading...</p>; 
 
   return (
-    <div className="w-full px-6 py-10">
-      
+    <div className="w-full px-6 py-10 ">
       <Swiper
         modules={[Navigation, Pagination]}
         spaceBetween={20}
@@ -50,7 +41,7 @@ export default function TrendingCard() {
         {movies.map((movie) => (
           <SwiperSlide key={movie.id} className="group relative cursor-pointer">
             <img
-              src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} // ✅ FIXED URL
+              src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
               alt={movie.title}
               className="w-full h-48 object-cover rounded-lg transition-transform transform group-hover:scale-105"
             />
